@@ -1,0 +1,1091 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Page Not Found | STACKLY</title>
+    <meta
+      name="description"
+      content="The page you're looking for doesn't exist."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: { preflight: false },
+        theme: {
+          extend: {
+            colors: {
+              ink: "#0F1123",
+              slate: "#1A1C2E",
+              brand: { DEFAULT: "#6C4DF6", 600: "#5639D6", 700: "#442BB5" },
+              violet: { DEFAULT: "#8B5CF6", 600: "#7C3AED" },
+              cream: "#F7F8FC",
+              inkText: "#1E2033",
+              muted: "#64687A",
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* =========================================================
+     BASE
+  ========================================================= */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        min-width: 0;
+      }
+
+      html {
+        -webkit-text-size-adjust: 100%;
+        overflow-x: clip;
+        max-width: 100%;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+        margin: 0;
+        background: #0f1123;
+        color: #fff;
+        line-height: 1.5;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: clip;
+        max-width: 100vw;
+        position: relative;
+      }
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+      ::selection {
+        background: #6c4df6;
+        color: #fff;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* =========================================================
+     SAFETY: ensure content is visible even if JS fails
+  ========================================================= */
+      .nf-badge,
+      .nf-code,
+      .nf-icon,
+      .nf-title,
+      .nf-desc,
+      .nf-error,
+      .nf-actions,
+      .nf-links,
+      .nf-footer-item,
+      .nf-back {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* =========================================================
+     BACKGROUND LAYERS
+  ========================================================= */
+      .nf-bg {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            ellipse at 15% 0%,
+            rgba(108, 77, 246, 0.22),
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse at 100% 100%,
+            rgba(124, 58, 237, 0.18),
+            transparent 55%
+          ),
+          #0f1123;
+      }
+      .nf-bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.045) 1px,
+            transparent 1px
+          );
+        background-size: 56px 56px;
+        mask-image: radial-gradient(
+          ellipse at center,
+          #000 25%,
+          transparent 80%
+        );
+        -webkit-mask-image: radial-gradient(
+          ellipse at center,
+          #000 25%,
+          transparent 80%
+        );
+      }
+      .nf-bg-blob {
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(110px);
+        will-change: transform;
+      }
+      .nf-bg-blob-1 {
+        top: -14%;
+        left: -12%;
+        width: 60vw;
+        height: 60vw;
+        max-width: 640px;
+        max-height: 640px;
+        background: rgba(108, 77, 246, 0.4);
+        animation: nfBlob 14s ease-in-out infinite alternate;
+      }
+      .nf-bg-blob-2 {
+        bottom: -18%;
+        right: -14%;
+        width: 55vw;
+        height: 55vw;
+        max-width: 580px;
+        max-height: 580px;
+        background: rgba(139, 92, 246, 0.32);
+        animation: nfBlob 16s ease-in-out infinite alternate-reverse;
+      }
+      @keyframes nfBlob {
+        from {
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+        to {
+          transform: translate3d(5%, -4%, 0) scale(1.15);
+        }
+      }
+
+      /* =========================================================
+     BACK LINK
+  ========================================================= */
+      .nf-back {
+        position: fixed;
+        top: clamp(14px, 2.4vw, 26px);
+        left: clamp(14px, 2.4vw, 26px);
+        z-index: 20;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        transition:
+          transform 0.25s ease,
+          background-color 0.25s ease,
+          border-color 0.25s ease;
+      }
+      .nf-back:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(139, 92, 246, 0.55);
+      }
+      .nf-back svg {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+      }
+
+      /* =========================================================
+     MAIN
+  ========================================================= */
+      .nf-main {
+        position: relative;
+        z-index: 5;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(90px, 14vw, 140px) clamp(16px, 4vw, 32px)
+          clamp(40px, 6vw, 60px);
+      }
+
+      .nf-inner {
+        width: 100%;
+        max-width: 720px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Badge */
+      .nf-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: clamp(20px, 3vw, 28px);
+      }
+      .nf-badge-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: #6c4df6;
+        animation: nfPulse 1.6s ease-in-out infinite;
+      }
+      @keyframes nfPulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.3);
+          opacity: 0.7;
+        }
+      }
+
+      /* 404 number — with visible fallback color */
+      .nf-code {
+        position: relative;
+        display: inline-block;
+        font-size: clamp(96px, 22vw, 180px);
+        font-weight: 800;
+        line-height: 0.9;
+        letter-spacing: -0.055em;
+        margin: 0;
+        color: #8b5cf6; /* fallback */
+        background: linear-gradient(
+          135deg,
+          #a78bfa 0%,
+          #8b5cf6 40%,
+          #6c4df6 75%,
+          #5639d6 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        user-select: none;
+      }
+      /* If background-clip:text not supported, ensure solid color */
+      @supports not (
+        (-webkit-background-clip: text) or (background-clip: text)
+      ) {
+        .nf-code {
+          color: #8b5cf6;
+          -webkit-text-fill-color: #8b5cf6;
+        }
+      }
+
+      /* Icon */
+      .nf-icon {
+        width: clamp(64px, 9vw, 80px);
+        height: clamp(64px, 9vw, 80px);
+        margin: clamp(-10px, -1.4vw, -6px) auto 0;
+        border-radius: 22px;
+        background: linear-gradient(135deg, #6c4df6, #5639d6);
+        display: grid;
+        place-items: center;
+        box-shadow: 0 24px 50px -20px rgba(108, 77, 246, 0.85);
+        position: relative;
+        z-index: 1;
+      }
+      .nf-icon svg {
+        width: 46%;
+        height: 46%;
+        color: #fff;
+      }
+
+      /* Heading */
+      .nf-title {
+        font-size: clamp(24px, 4.4vw, 40px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+        color: #fff;
+        margin: clamp(22px, 3.4vw, 32px) 0 0;
+      }
+      .nf-title span {
+        color: #a78bfa; /* fallback */
+        background: linear-gradient(90deg, #a78bfa, #8b5cf6, #c4b5fd);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      @supports not (
+        (-webkit-background-clip: text) or (background-clip: text)
+      ) {
+        .nf-title span {
+          color: #a78bfa;
+          -webkit-text-fill-color: #a78bfa;
+        }
+      }
+
+      /* Description */
+      .nf-desc {
+        font-size: clamp(13.5px, 1.7vw, 15.5px);
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.65);
+        margin: clamp(14px, 2vw, 18px) auto 0;
+        max-width: 480px;
+      }
+
+      /* =========================================================
+     ERROR MESSAGE BLOCK
+  ========================================================= */
+      .nf-error {
+        position: relative;
+        width: 100%;
+        max-width: 560px;
+        margin: clamp(22px, 3vw, 30px) auto 0;
+        padding: clamp(16px, 2.2vw, 22px) clamp(16px, 2.4vw, 24px);
+        background: rgba(108, 77, 246, 0.06);
+        border: 1.5px solid rgba(139, 92, 246, 0.28);
+        border-left: 3px solid #8b5cf6;
+        border-radius: 14px;
+        text-align: left;
+        overflow: hidden;
+        isolation: isolate;
+      }
+      .nf-error::before {
+        content: "";
+        position: absolute;
+        top: -40%;
+        right: -20%;
+        width: 60%;
+        height: 140%;
+        background: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 0.18),
+          transparent 65%
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .nf-error-head {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      .nf-error-icon {
+        flex: 0 0 34px;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        background: rgba(139, 92, 246, 0.16);
+        border: 1px solid rgba(139, 92, 246, 0.3);
+        color: #c4b5fd;
+        display: grid;
+        place-items: center;
+      }
+      .nf-error-icon svg {
+        width: 17px;
+        height: 17px;
+      }
+
+      .nf-error-headtext {
+        flex: 1;
+        min-width: 0;
+      }
+      .nf-error-title {
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #c4b5fd;
+        margin: 0 0 4px;
+        line-height: 1.3;
+      }
+      .nf-error-sub {
+        font-size: 13.5px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.72);
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .nf-error-details {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-top: 12px;
+        border-top: 1px dashed rgba(139, 92, 246, 0.25);
+      }
+      .nf-error-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 12.5px;
+        line-height: 1.5;
+        min-width: 0;
+      }
+      .nf-error-label {
+        flex: 0 0 58px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        padding-top: 2px;
+      }
+      .nf-error-value {
+        flex: 1;
+        min-width: 0;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.88);
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+      .nf-error-value.is-code {
+        font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+        font-size: 12px;
+        font-weight: 700;
+        color: #c4b5fd;
+        letter-spacing: 0.02em;
+      }
+      .nf-error-value.is-path {
+        display: inline-block;
+        max-width: 100%;
+        font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.9);
+        background: rgba(15, 17, 35, 0.5);
+        padding: 2px 8px;
+        border-radius: 6px;
+        border: 1px solid rgba(139, 92, 246, 0.18);
+        overflow-wrap: anywhere;
+      }
+
+      /* =========================================================
+     ACTION BUTTONS
+  ========================================================= */
+      .nf-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-top: clamp(28px, 4vw, 40px);
+        width: 100%;
+        max-width: 420px;
+      }
+      @media (min-width: 560px) {
+        .nf-actions {
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          max-width: none;
+        }
+        .nf-actions .nf-btn {
+          width: auto;
+        }
+      }
+
+      .nf-btn {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px 28px;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        border-radius: 999px;
+        cursor: pointer;
+        white-space: nowrap;
+        transition:
+          color 0.35s ease,
+          transform 0.25s ease,
+          box-shadow 0.3s ease,
+          border-color 0.35s ease;
+        will-change: transform;
+        -webkit-tap-highlight-color: transparent;
+        border: 0;
+        width: 100%;
+      }
+
+      .nf-btn::before {
+        content: "";
+        position: absolute;
+        left: -8%;
+        right: -8%;
+        bottom: 0;
+        height: 0%;
+        background: var(--nf-wave, #fff);
+        border-radius: 50% 50% 0 0 / 28px 28px 0 0;
+        transition:
+          height 0.6s cubic-bezier(0.2, 0.7, 0.3, 1),
+          border-radius 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
+        z-index: 0;
+        pointer-events: none;
+      }
+      .nf-btn:hover::before,
+      .nf-btn:focus-visible::before,
+      .nf-btn:active::before {
+        height: 175%;
+        border-radius: 0;
+      }
+      .nf-btn > * {
+        position: relative;
+        z-index: 1;
+      }
+      .nf-btn svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1);
+      }
+      .nf-btn:hover svg {
+        transform: translateX(3px);
+      }
+      .nf-btn.nf-btn-back:hover svg {
+        transform: translateX(-3px);
+      }
+
+      .nf-btn-primary {
+        background: linear-gradient(135deg, #6c4df6, #5639d6);
+        color: #fff;
+        box-shadow: 0 18px 40px -14px rgba(108, 77, 246, 0.7);
+        --nf-wave: #ffffff;
+      }
+      .nf-btn-primary:hover,
+      .nf-btn-primary:focus-visible {
+        color: #6c4df6;
+        box-shadow: 0 22px 48px -14px rgba(108, 77, 246, 0.9);
+        transform: translateY(-2px);
+      }
+
+      .nf-btn-secondary {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1.5px solid rgba(255, 255, 255, 0.24);
+        color: #fff;
+        --nf-wave: #ffffff;
+      }
+      .nf-btn-secondary:hover,
+      .nf-btn-secondary:focus-visible {
+        color: #0f1123;
+        border-color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 18px 40px -18px rgba(255, 255, 255, 0.4);
+      }
+
+      /* =========================================================
+     QUICK LINKS
+  ========================================================= */
+      .nf-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 8px 14px;
+        margin-top: clamp(30px, 4vw, 44px);
+        padding-top: clamp(24px, 3vw, 32px);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        width: 100%;
+        max-width: 640px;
+      }
+      .nf-links-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        margin: 0;
+        flex-shrink: 0;
+      }
+      .nf-links-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 6px 8px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nf-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 12.5px;
+        font-weight: 600;
+        transition:
+          color 0.25s ease,
+          background-color 0.25s ease,
+          border-color 0.25s ease,
+          transform 0.25s ease;
+      }
+      .nf-link:hover {
+        color: #fff;
+        background: rgba(108, 77, 246, 0.14);
+        border-color: rgba(108, 77, 246, 0.5);
+        transform: translateY(-2px);
+      }
+      .nf-link-dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 999px;
+        background: #8b5cf6;
+        flex-shrink: 0;
+      }
+
+      /* =========================================================
+     FOOTER
+  ========================================================= */
+      .nf-footer {
+        position: relative;
+        z-index: 5;
+        padding: 22px clamp(16px, 4vw, 32px);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        text-align: center;
+      }
+      @media (min-width: 640px) {
+        .nf-footer {
+          flex-direction: row;
+          justify-content: space-between;
+          text-align: left;
+        }
+      }
+      .nf-footer-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.45);
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .nf-footer-item svg {
+        width: 14px;
+        height: 14px;
+        color: #8b5cf6;
+        flex-shrink: 0;
+      }
+      .nf-footer-item a {
+        color: rgba(255, 255, 255, 0.72);
+        transition: color 0.2s ease;
+      }
+      .nf-footer-item a:hover {
+        color: #a78bfa;
+      }
+
+      /* =========================================================
+     REDUCED MOTION
+  ========================================================= */
+      @media (prefers-reduced-motion: reduce) {
+        .nf-bg-blob-1,
+        .nf-bg-blob-2,
+        .nf-badge-dot {
+          animation: none !important;
+        }
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+
+      /* =========================================================
+     AOS FALLBACK
+     If AOS never initializes, ensure elements aren't stuck hidden
+  ========================================================= */
+      html:not(.aos-init) [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background -->
+    <div class="nf-bg" aria-hidden="true">
+      <div class="nf-bg-grid"></div>
+      <div class="nf-bg-blob nf-bg-blob-1"></div>
+      <div class="nf-bg-blob nf-bg-blob-2"></div>
+    </div>
+
+    <!-- Back link -->
+    <!-- <a href="./index.html" class="nf-back" aria-label="Back to home">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5M12 19l-7-7 7-7" />
+      </svg>
+      <span>Back</span>
+    </a> -->
+
+    <!-- Main -->
+    <main class="nf-main">
+      <div class="nf-inner">
+        <span class="nf-badge" data-aos="fade-down">
+          <span class="nf-badge-dot"></span>
+          Error 404
+        </span>
+
+        <h1 class="nf-code" data-aos="zoom-in" data-aos-delay="100">404</h1>
+
+        <!-- <div class="nf-icon" data-aos="zoom-in" data-aos-delay="200">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="11" cy="11" r="7" />
+            <path d="m21 21-4.35-4.35" />
+            <path d="M11 8v3.5M11 14h.01" />
+          </svg>
+        </div> -->
+
+        <h2 class="nf-title" data-aos="fade-up" data-aos-delay="250">
+          We couldn't find that <span>page.</span>
+        </h2>
+
+        <p class="nf-desc" data-aos="fade-up" data-aos-delay="300">
+          The page you're looking for may have been moved, renamed, or simply
+          doesn't exist. Let's get you back on track.
+        </p>
+
+        <!-- ==================================================
+         ERROR MESSAGE
+    =================================================== -->
+        <!-- <div
+          class="nf-error"
+          data-aos="fade-up"
+          data-aos-delay="350"
+          role="alert"
+          aria-live="polite"
+        >
+          <div class="nf-error-head">
+            <span class="nf-error-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                />
+                <path d="M12 9v4M12 17h.01" />
+              </svg>
+            </span>
+            <div class="nf-error-headtext">
+              <p class="nf-error-title">Error Message</p>
+              <p class="nf-error-sub">
+                The requested resource could not be found on this server.
+              </p>
+            </div>
+          </div>
+
+          <div class="nf-error-details">
+            <div class="nf-error-row">
+              <span class="nf-error-label">Code</span>
+              <span class="nf-error-value is-code">ERR_404_PAGE_NOT_FOUND</span>
+            </div>
+            <div class="nf-error-row">
+              <span class="nf-error-label">URL</span>
+              <span class="nf-error-value">
+                <span class="is-path" id="nfErrorPath">/page-not-found</span>
+              </span>
+            </div>
+            <div class="nf-error-row">
+              <span class="nf-error-label">Time</span>
+              <span class="nf-error-value" id="nfErrorTime">—</span>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Action buttons -->
+        <div class="nf-actions" data-aos="fade-up" data-aos-delay="400">
+          <button
+            type="button"
+            class="nf-btn nf-btn-secondary nf-btn-back"
+            id="nfGoBack"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            <span>Go Back</span>
+          </button>
+
+          <a href="./index.html" class="nf-btn nf-btn-primary">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 12l9-9 9 9" />
+              <path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10" />
+            </svg>
+            <span>Go To Home</span>
+          </a>
+        </div>
+
+        <!-- Quick links -->
+        <!-- <div class="nf-links" data-aos="fade-up" data-aos-delay="450">
+          <p class="nf-links-label">Popular</p>
+          <ul class="nf-links-list">
+            <li>
+              <a href="./services.html" class="nf-link"
+                ><span class="nf-link-dot"></span>Services</a
+              >
+            </li>
+            <li>
+              <a href="./about.html" class="nf-link"
+                ><span class="nf-link-dot"></span>About Us</a
+              >
+            </li>
+            <li>
+              <a href="./blogs.html" class="nf-link"
+                ><span class="nf-link-dot"></span>Blogs</a
+              >
+            </li>
+            <li>
+              <a href="./contact.html" class="nf-link"
+                ><span class="nf-link-dot"></span>Contact</a
+              >
+            </li>
+          </ul>
+        </div> -->
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <!-- <footer class="nf-footer">
+      <span class="nf-footer-item">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 2l8 4v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4z" />
+        </svg>
+        <span
+          >Copyright 2025,
+          <strong style="color: #fff; font-weight: 800">STACKLY</strong>. All
+          Rights Reserved</span
+        >
+      </span>
+      <span class="nf-footer-item">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"
+          />
+        </svg>
+        <span>Need help? <a href="tel:+18005550142">+1 (800) 555-0142</a></span>
+      </span>
+    </footer> -->
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      (function () {
+        "use strict";
+
+        /* =========================================================
+     SAFETY FIRST — force visibility no matter what
+     This runs immediately and guarantees the page is readable
+     even if AOS, GSAP, or any CDN fails to load.
+  ========================================================= */
+        document.documentElement.classList.add("js-ready");
+
+        /* =========================================================
+     AOS — safe init with error handling
+  ========================================================= */
+        try {
+          if (window.AOS) {
+            AOS.init({
+              duration: 700,
+              easing: "ease-out-cubic",
+              once: true,
+              offset: 40,
+              disable: function () {
+                return window.matchMedia("(prefers-reduced-motion: reduce)")
+                  .matches;
+              },
+            });
+          }
+        } catch (e) {
+          console.warn("AOS failed", e);
+        }
+
+        /* After 2 seconds, force anything still hidden to become visible */
+        setTimeout(function () {
+          document.querySelectorAll("[data-aos]").forEach(function (el) {
+            var cs = window.getComputedStyle(el);
+            if (parseFloat(cs.opacity) < 0.1) {
+              el.style.opacity = "1";
+              el.style.transform = "none";
+            }
+          });
+        }, 2000);
+
+        /* =========================================================
+     POPULATE ERROR DETAILS
+  ========================================================= */
+        try {
+          var pathEl = document.getElementById("nfErrorPath");
+          var timeEl = document.getElementById("nfErrorTime");
+
+          if (pathEl) {
+            var attempted =
+              (window.location.pathname || "") +
+              (window.location.search || "") +
+              (window.location.hash || "");
+            if (
+              !attempted ||
+              attempted === "/" ||
+              attempted === "/404.html" ||
+              attempted === "/404"
+            ) {
+              attempted = "/page-not-found";
+            }
+            pathEl.textContent = attempted;
+          }
+
+          if (timeEl) {
+            var now = new Date();
+            timeEl.textContent = now.toLocaleString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+              hour: "2-digit",
+              minute: "2-digit",
+            });
+          }
+        } catch (e) {
+          console.warn("Error details fill failed", e);
+        }
+
+        /* =========================================================
+     GO BACK BUTTON
+  ========================================================= */
+        var backBtn = document.getElementById("nfGoBack");
+        if (backBtn) {
+          backBtn.addEventListener("click", function () {
+            try {
+              if (window.history.length > 1 && document.referrer) {
+                window.history.back();
+              } else {
+                window.location.href = "./index.html";
+              }
+            } catch (e) {
+              window.location.href = "./index.html";
+            }
+          });
+        }
+
+        /* =========================================================
+     GENTLE FLOAT ON THE 404 NUMBER
+     Uses fromTo so the element is never hidden — only animated
+     between two visible positions.
+  ========================================================= */
+        try {
+          if (window.gsap) {
+            var prefersReduced = window.matchMedia(
+              "(prefers-reduced-motion: reduce)",
+            ).matches;
+            if (!prefersReduced) {
+              gsap.to(".nf-code", {
+                y: -6,
+                duration: 3,
+                ease: "sine.inOut",
+                repeat: -1,
+                yoyo: true,
+                delay: 0.6,
+              });
+            }
+          }
+        } catch (e) {
+          console.warn("GSAP float failed", e);
+        }
+      })();
+    </script>
+  </body>
+</html>

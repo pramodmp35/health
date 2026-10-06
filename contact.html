@@ -1,0 +1,3752 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us — STACKLY Health Insurance</title>
+    <meta
+      name="description"
+      content="Get in touch with STACKLY. Talk to our health insurance experts, visit our office, or send us a message."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: { preflight: false },
+        theme: {
+          extend: {
+            colors: {
+              ink: "#0F1123",
+              slate: "#1A1C2E",
+              brand: { DEFAULT: "#6C4DF6", 600: "#5639D6", 700: "#442BB5" },
+              violet: { DEFAULT: "#8B5CF6", 600: "#7C3AED" },
+              cream: "#F7F8FC",
+              inkText: "#1E2033",
+              muted: "#64687A",
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* =========================================================
+     BASE
+  ========================================================= */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        min-width: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+        overflow-x: clip;
+        max-width: 100%;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+        background: #f7f8fc;
+        color: #1e2033;
+        overflow-x: clip;
+        max-width: 100vw;
+        margin: 0;
+        line-height: 1.5;
+      }
+      body.navbar-locked {
+        overflow: hidden;
+      }
+      img,
+      svg,
+      iframe {
+        max-width: 100%;
+        display: block;
+      }
+      ::selection {
+        background: #6c4df6;
+        color: #fff;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f7f8fc;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #6c4df6;
+        border-radius: 99px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #5639d6;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+      }
+      html:not(.aos-init) [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      /* =========================================================
+     NAVBAR
+  ========================================================= */
+      .navbar-shell {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(15, 17, 35, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        transition:
+          background-color 0.35s ease,
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
+      }
+      .navbar-shell.is-scrolled {
+        background: rgba(15, 17, 35, 0.95);
+        box-shadow: 0 14px 40px -20px rgba(0, 0, 0, 0.75);
+      }
+
+      .navbar-inner {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        height: 62px;
+      }
+      @media (min-width: 640px) {
+        .navbar-inner {
+          padding: 0 24px;
+          height: 66px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .navbar-inner {
+          padding: 0 32px;
+          height: 100px;
+          gap: 32px;
+        }
+      }
+
+      .navbar-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        flex-shrink: 0;
+        min-width: 0;
+      }
+
+      .navbar-logo-wrap {
+        position: relative;
+        width: auto;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+      }
+      @media (min-width: 1024px) {
+        .navbar-logo-wrap {
+          height: 100px;
+        }
+      }
+
+      .navbar-logo-img {
+        width: auto;
+        height: 42px;
+        object-fit: contain;
+        position: relative;
+        z-index: 2;
+      }
+      @media (min-width: 1024px) {
+        .navbar-logo-img {
+          height: 100px;
+        }
+      }
+
+      .navbar-logo-ring {
+        position: absolute;
+        inset: 0;
+        animation: navbarRing 2.6s ease-out infinite;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .navbar-logo-ring-2 {
+        animation-delay: 1.3s;
+      }
+      @keyframes navbarRing {
+        0% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+        80% {
+          transform: scale(1.7);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1.7);
+          opacity: 0;
+        }
+      }
+
+      .navbar-desktop {
+        display: none;
+        align-items: center;
+        gap: 4px;
+        flex: 1;
+        justify-content: center;
+      }
+      @media (min-width: 1024px) {
+        .navbar-desktop {
+          display: flex;
+        }
+      }
+
+      .navbar-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 14px;
+        font-size: 13.5px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.72);
+        text-decoration: none;
+        border-radius: 10px;
+        white-space: nowrap;
+        transition:
+          color 0.25s ease,
+          background-color 0.25s ease;
+      }
+      .navbar-link::after {
+        content: "";
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: 4px;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #6c4df6, #8b5cf6);
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1);
+      }
+      .navbar-link:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .navbar-link:hover::after {
+        transform: scaleX(1);
+      }
+      .navbar-link.is-active {
+        color: #fff;
+      }
+      .navbar-link.is-active::after {
+        transform: scaleX(1);
+      }
+
+      .navbar-login {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 11px 22px;
+        font-size: 13.5px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #6c4df6, #5639d6);
+        box-shadow: 0 14px 30px -14px rgba(108, 77, 246, 0.7);
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        white-space: nowrap;
+        transition:
+          color 0.35s ease,
+          transform 0.25s ease,
+          box-shadow 0.3s ease;
+        flex-shrink: 0;
+      }
+      @media (min-width: 1024px) {
+        .navbar-login {
+          display: inline-flex;
+        }
+      }
+
+      .navbar-login::before {
+        content: "";
+        position: absolute;
+        left: -8%;
+        right: -8%;
+        bottom: 0;
+        height: 0%;
+        background: #fff;
+        border-radius: 50% 50% 0 0 / 24px 24px 0 0;
+        transition:
+          height 0.55s cubic-bezier(0.2, 0.7, 0.3, 1),
+          border-radius 0.55s cubic-bezier(0.2, 0.7, 0.3, 1);
+        z-index: 0;
+        pointer-events: none;
+      }
+      .navbar-login:hover::before,
+      .navbar-login:focus-visible::before {
+        height: 175%;
+        border-radius: 0;
+      }
+      .navbar-login > * {
+        position: relative;
+        z-index: 1;
+      }
+      .navbar-login > svg {
+        width: 15px;
+        height: 15px;
+      }
+
+      .navbar-login:hover,
+      .navbar-login:focus-visible {
+        color: #6c4df6;
+        transform: translateY(-2px);
+        box-shadow: 0 18px 40px -14px rgba(108, 77, 246, 0.85);
+      }
+
+      .navbar-hamburger {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        border: 1.5px solid rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 12px;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition:
+          background-color 0.25s ease,
+          border-color 0.25s ease,
+          transform 0.25s ease;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .navbar-hamburger:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+      .navbar-hamburger:active {
+        transform: scale(0.96);
+      }
+
+      .navbar-hamburger-line {
+        display: block;
+        width: 18px;
+        height: 2px;
+        border-radius: 999px;
+        background: #fff;
+      }
+      @media (min-width: 1024px) {
+        .navbar-hamburger {
+          display: none;
+        }
+      }
+
+      .navbar-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        z-index: 1500;
+        background: linear-gradient(
+          180deg,
+          #0f1123 0%,
+          #1a1c2e 55%,
+          #241a54 100%
+        );
+        overflow: hidden;
+        isolation: isolate;
+        transform: translateX(-100%);
+        visibility: hidden;
+        transition:
+          transform 0.55s cubic-bezier(0.6, 0.05, 0.2, 1),
+          visibility 0.55s ease;
+        will-change: transform;
+      }
+      .navbar-menu.is-open {
+        transform: translateX(0);
+        visibility: visible;
+      }
+      @media (min-width: 1024px) {
+        .navbar-menu {
+          display: none !important;
+        }
+      }
+
+      .navbar-menu::before {
+        content: "";
+        position: absolute;
+        top: -15%;
+        left: -20%;
+        width: 80%;
+        height: 55%;
+        border-radius: 999px;
+        background: radial-gradient(
+          circle,
+          rgba(108, 77, 246, 0.45),
+          transparent 65%
+        );
+        filter: blur(80px);
+        z-index: 0;
+        pointer-events: none;
+      }
+      .navbar-menu::after {
+        content: "";
+        position: absolute;
+        bottom: -25%;
+        right: -20%;
+        width: 80%;
+        height: 55%;
+        border-radius: 999px;
+        background: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 0.35),
+          transparent 65%
+        );
+        filter: blur(90px);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .navbar-menu-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+          );
+        background-size: 52px 52px;
+        mask-image: radial-gradient(
+          ellipse at 30% 30%,
+          #000 25%,
+          transparent 78%
+        );
+        -webkit-mask-image: radial-gradient(
+          ellipse at 30% 30%,
+          #000 25%,
+          transparent 78%
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .navbar-menu-inner {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        padding: 0 clamp(20px, 6vw, 40px);
+        align-items: flex-start;
+      }
+
+      .navbar-menu-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 62px;
+        flex-shrink: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      @media (min-width: 640px) {
+        .navbar-menu-head {
+          height: 66px;
+        }
+      }
+
+      .navbar-close {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        border: 1.5px solid rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 12px;
+        color: #fff;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition:
+          background-color 0.25s ease,
+          border-color 0.25s ease,
+          transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1);
+        -webkit-tap-highlight-color: transparent;
+      }
+      .navbar-close:hover {
+        background: rgba(255, 255, 255, 0.14);
+        border-color: rgba(255, 255, 255, 0.32);
+        transform: rotate(90deg);
+      }
+      .navbar-close:active {
+        transform: rotate(90deg) scale(0.94);
+      }
+      .navbar-close svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .navbar-menu-nav {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2px;
+        padding: 20px 0;
+        width: 100%;
+        min-height: 0;
+        overflow-y: auto;
+      }
+
+      .navbar-menu-link {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        padding: 13px 0;
+        text-decoration: none;
+        color: #fff;
+        opacity: 0;
+        transform: translateX(-24px);
+        transition:
+          opacity 0.5s ease,
+          transform 0.55s cubic-bezier(0.2, 0.7, 0.3, 1);
+        position: relative;
+        -webkit-tap-highlight-color: transparent;
+        width: 100%;
+      }
+      .navbar-menu-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          rgba(139, 92, 246, 0.35),
+          rgba(139, 92, 246, 0)
+        );
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.3, 1);
+      }
+      .navbar-menu.is-open .navbar-menu-link {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .navbar-menu-link:nth-child(1) {
+        transition-delay: 0.18s;
+      }
+      .navbar-menu-link:nth-child(2) {
+        transition-delay: 0.24s;
+      }
+      .navbar-menu-link:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+      .navbar-menu-link:nth-child(4) {
+        transition-delay: 0.36s;
+      }
+      .navbar-menu-link:nth-child(5) {
+        transition-delay: 0.42s;
+      }
+
+      .navbar-menu-link:hover::after {
+        transform: scaleX(1);
+      }
+      .navbar-menu-link.is-active::after {
+        transform: scaleX(1);
+      }
+
+      .navbar-menu-num {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        color: rgba(255, 255, 255, 0.4);
+        min-width: 26px;
+        flex-shrink: 0;
+        padding-top: 3px;
+        transition: color 0.3s ease;
+      }
+      .navbar-menu-link:hover .navbar-menu-num,
+      .navbar-menu-link.is-active .navbar-menu-num {
+        color: #8b5cf6;
+      }
+
+      .navbar-menu-text {
+        font-size: clamp(26px, 8vw, 40px);
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        line-height: 1.05;
+        color: #fff;
+        transition: color 0.3s ease;
+        text-transform: uppercase;
+      }
+      .navbar-menu-link:hover .navbar-menu-text,
+      .navbar-menu-link.is-active .navbar-menu-text {
+        background: linear-gradient(90deg, #a78bfa, #8b5cf6, #c4b5fd);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .navbar-menu-foot {
+        flex-shrink: 0;
+        width: 100%;
+        padding: 18px 0 26px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        opacity: 0;
+        transform: translateY(16px);
+        transition:
+          opacity 0.5s ease 0.55s,
+          transform 0.55s cubic-bezier(0.2, 0.7, 0.3, 1) 0.55s;
+      }
+      .navbar-menu.is-open .navbar-menu-foot {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .navbar-menu-login {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px 28px;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #6c4df6, #5639d6);
+        box-shadow: 0 18px 40px -14px rgba(108, 77, 246, 0.7);
+        transition:
+          color 0.35s ease,
+          transform 0.25s ease,
+          box-shadow 0.3s ease;
+        width: 100%;
+      }
+      .navbar-menu-login::before {
+        content: "";
+        position: absolute;
+        left: -8%;
+        right: -8%;
+        bottom: 0;
+        height: 0%;
+        background: #fff;
+        border-radius: 50% 50% 0 0 / 28px 28px 0 0;
+        transition:
+          height 0.6s cubic-bezier(0.2, 0.7, 0.3, 1),
+          border-radius 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
+        z-index: 0;
+        pointer-events: none;
+      }
+      .navbar-menu-login:hover::before,
+      .navbar-menu-login:focus-visible::before {
+        height: 175%;
+        border-radius: 0;
+      }
+      .navbar-menu-login > * {
+        position: relative;
+        z-index: 1;
+      }
+      .navbar-menu-login > svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .navbar-menu-login:hover,
+      .navbar-menu-login:focus-visible {
+        color: #6c4df6;
+        transform: translateY(-2px);
+      }
+
+      /* =========================================================
+     PAGE CONTAINER (fluid)
+  ========================================================= */
+      .page-container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding-left: clamp(16px, 4vw, 32px);
+        padding-right: clamp(16px, 4vw, 32px);
+      }
+
+      .section-pad {
+        padding-top: clamp(44px, 8vw, 96px);
+        padding-bottom: clamp(44px, 8vw, 96px);
+      }
+      .section-pad-sm {
+        padding-top: clamp(36px, 6vw, 72px);
+        padding-bottom: clamp(36px, 6vw, 72px);
+      }
+
+      /* =========================================================
+     HERO
+  ========================================================= */
+      .hero {
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        min-height: clamp(500px, 68vh, 700px);
+        padding-top: clamp(90px, 12vw, 160px);
+        padding-bottom: clamp(56px, 9vw, 120px);
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          115deg,
+          rgba(15, 17, 35, 0.96) 0%,
+          rgba(15, 17, 35, 0.88) 42%,
+          rgba(68, 43, 181, 0.72) 100%
+        );
+      }
+      .hero-grid-lines {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.045) 1px,
+            transparent 1px
+          );
+        background-size: clamp(36px, 6vw, 60px) clamp(36px, 6vw, 60px);
+        mask-image: radial-gradient(
+          ellipse at 50% 40%,
+          #000 10%,
+          transparent 72%
+        );
+        -webkit-mask-image: radial-gradient(
+          ellipse at 50% 40%,
+          #000 10%,
+          transparent 72%
+        );
+      }
+      .hero-blob {
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(100px);
+        pointer-events: none;
+      }
+      .hero-blob-1 {
+        top: -8%;
+        right: -8%;
+        width: clamp(200px, 40vw, 420px);
+        height: clamp(200px, 40vw, 420px);
+        background: rgba(108, 77, 246, 0.28);
+      }
+      .hero-blob-2 {
+        bottom: -14%;
+        left: -6%;
+        width: clamp(180px, 34vw, 360px);
+        height: clamp(180px, 34vw, 360px);
+        background: rgba(124, 58, 237, 0.22);
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(8px);
+        border-radius: 999px;
+        padding: clamp(5px, 1vw, 8px) clamp(12px, 2vw, 18px);
+        font-size: clamp(10px, 1.6vw, 12px);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: rgba(255, 255, 255, 0.88);
+      }
+      .hero-heading {
+        font-size: clamp(28px, 6.4vw, 62px);
+        line-height: 1.1;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: #fff;
+        margin: clamp(14px, 2.4vw, 26px) 0 0;
+      }
+      .hero-sub {
+        font-size: clamp(14px, 1.9vw, 17px);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.72);
+        margin: clamp(14px, 2.2vw, 22px) 0 0;
+        max-width: 540px;
+      }
+
+      /* =========================================================
+     INFO CARDS GRID
+  ========================================================= */
+      .cards-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      @media (min-width: 560px) {
+        .cards-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 18px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .cards-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 20px;
+        }
+      }
+
+      .info-card {
+        background: #fff;
+        border: 1px solid #e9ebf4;
+        border-radius: 20px;
+        padding: clamp(16px, 2.4vw, 26px);
+        transition:
+          transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1),
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
+        min-width: 0;
+      }
+      @media (hover: hover) {
+        .info-card:hover {
+          transform: translateY(-6px);
+          border-color: rgba(108, 77, 246, 0.35);
+          box-shadow: 0 26px 60px -30px rgba(108, 77, 246, 0.6);
+        }
+        .info-card:hover .info-icon {
+          background: linear-gradient(135deg, #6c4df6, #8b5cf6);
+          color: #fff;
+          transform: rotate(-6deg) scale(1.06);
+        }
+      }
+
+      .info-icon {
+        width: clamp(42px, 5.6vw, 56px);
+        height: clamp(42px, 5.6vw, 56px);
+        border-radius: clamp(12px, 1.6vw, 16px);
+        display: grid;
+        place-items: center;
+        transition: all 0.4s cubic-bezier(0.2, 0.7, 0.3, 1);
+      }
+      .info-icon svg {
+        width: clamp(20px, 2.4vw, 24px);
+        height: clamp(20px, 2.4vw, 24px);
+      }
+
+      .info-title {
+        font-size: clamp(15px, 1.8vw, 18px);
+        font-weight: 800;
+        color: #1e2033;
+        margin: clamp(14px, 1.8vw, 20px) 0 0;
+        line-height: 1.25;
+      }
+      .info-body {
+        font-size: clamp(13px, 1.5vw, 14px);
+        line-height: 1.55;
+        color: #64687a;
+        margin: clamp(8px, 1.2vw, 12px) 0 0;
+      }
+      .info-meta {
+        font-size: clamp(10px, 1.2vw, 11px);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: rgba(100, 104, 122, 0.75);
+        margin: clamp(12px, 1.6vw, 18px) 0 0;
+      }
+
+      /* =========================================================
+     CONTACT SPLIT (info + form)
+  ========================================================= */
+      .contact-split {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: clamp(32px, 5vw, 56px);
+      }
+      @media (min-width: 1024px) {
+        .contact-split {
+          grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        }
+      }
+
+      .section-heading {
+        font-size: clamp(24px, 4.2vw, 42px);
+        line-height: 1.15;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: #1e2033;
+        margin: clamp(12px, 1.8vw, 18px) 0 0;
+      }
+      .section-sub {
+        font-size: clamp(14px, 1.7vw, 16px);
+        line-height: 1.6;
+        color: #64687a;
+        margin: clamp(12px, 1.8vw, 18px) 0 0;
+        max-width: 480px;
+      }
+      .section-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(108, 77, 246, 0.1);
+        border-radius: 999px;
+        padding: clamp(5px, 0.8vw, 7px) clamp(12px, 1.8vw, 16px);
+        font-size: clamp(10px, 1.2vw, 11px);
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #5639d6;
+      }
+      .section-pill-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: #6c4df6;
+      }
+
+      .info-list {
+        list-style: none;
+        margin: clamp(24px, 4vw, 44px) 0 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .info-row {
+        display: flex;
+        align-items: flex-start;
+        gap: clamp(12px, 1.6vw, 16px);
+        padding: clamp(14px, 1.6vw, 18px);
+        border: 1px solid #edeff7;
+        background: rgba(247, 248, 252, 0.6);
+        border-radius: 18px;
+        transition:
+          border-color 0.25s ease,
+          background-color 0.25s ease;
+      }
+      .info-row:hover {
+        border-color: rgba(108, 77, 246, 0.3);
+        background: #fff;
+      }
+      .info-row-icon {
+        flex: 0 0 auto;
+        width: clamp(38px, 4.4vw, 44px);
+        height: clamp(38px, 4.4vw, 44px);
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+      }
+      .info-row-icon svg {
+        width: clamp(18px, 2vw, 20px);
+        height: clamp(18px, 2vw, 20px);
+      }
+      .info-row-label {
+        font-size: clamp(10px, 1.1vw, 11px);
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #64687a;
+        margin: 0;
+      }
+      .info-row-value {
+        font-size: clamp(13px, 1.5vw, 14px);
+        font-weight: 600;
+        color: #1e2033;
+        margin: 4px 0 0;
+        line-height: 1.5;
+      }
+      .info-row-value a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .info-row-value a:hover {
+        color: #5639d6;
+      }
+
+      /* =========================================================
+     FORM
+  ========================================================= */
+      .form-card {
+        position: relative;
+        background: rgba(247, 248, 252, 0.7);
+        border: 1px solid #e9ebf4;
+        border-radius: clamp(20px, 3vw, 32px);
+        padding: clamp(18px, 3vw, 40px);
+        overflow: hidden;
+      }
+      .form-card-glow {
+        position: absolute;
+        top: -90px;
+        right: -90px;
+        width: 240px;
+        height: 240px;
+        border-radius: 999px;
+        background: rgba(108, 77, 246, 0.12);
+        filter: blur(80px);
+        pointer-events: none;
+      }
+      .form-title {
+        font-size: clamp(18px, 2.4vw, 24px);
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        color: #1e2033;
+        margin: 0;
+        line-height: 1.25;
+      }
+      .form-desc {
+        font-size: clamp(12.5px, 1.4vw, 14px);
+        color: #64687a;
+        margin: 8px 0 0;
+        line-height: 1.5;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: clamp(20px, 3vw, 28px);
+      }
+      @media (min-width: 560px) {
+        .form-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 16px;
+        }
+      }
+      .form-grid .col-full {
+        grid-column: 1 / -1;
+      }
+
+      .form-label {
+        display: block;
+        font-size: clamp(10.5px, 1.1vw, 12px);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #1e2033;
+        margin-bottom: 6px;
+        line-height: 1.3;
+      }
+      .form-label .req {
+        color: #6c4df6;
+      }
+
+      .form-control,
+      .form-select {
+        width: 100%;
+        display: block;
+        padding: clamp(11px, 1.3vw, 14px) clamp(12px, 1.4vw, 16px);
+        font-size: clamp(13.5px, 1.4vw, 15px);
+        line-height: 1.4;
+        font-family: inherit;
+        color: #1e2033;
+        background: #fff;
+        border: 1.5px solid #e4e6f0;
+        border-radius: clamp(11px, 1.3vw, 14px);
+        transition:
+          border-color 0.25s ease,
+          box-shadow 0.25s ease;
+        appearance: none;
+        -webkit-appearance: none;
+      }
+      .form-select {
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%2364687A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+        padding-right: 40px;
+      }
+      .form-control::placeholder {
+        color: #9aa0b4;
+      }
+      .form-control:focus,
+      .form-select:focus {
+        outline: none;
+        border-color: #6c4df6;
+        box-shadow: 0 0 0 4px rgba(108, 77, 246, 0.14);
+      }
+      textarea.form-control {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .invalid-feedback {
+        display: none;
+        font-size: clamp(11.5px, 1.2vw, 12.5px);
+        font-weight: 600;
+        color: #ef4444;
+        margin-top: 6px;
+        line-height: 1.35;
+      }
+      .was-validated .form-control:invalid,
+      .was-validated .form-select:invalid,
+      .form-control.is-invalid,
+      .form-select.is-invalid {
+        border-color: #ef4444 !important;
+        box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12) !important;
+      }
+      .was-validated .form-control:valid,
+      .was-validated .form-select:valid {
+        border-color: #10b981 !important;
+        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.12) !important;
+      }
+      .was-validated .form-control:invalid ~ .invalid-feedback,
+      .was-validated .form-select:invalid ~ .invalid-feedback,
+      .form-control.is-invalid ~ .invalid-feedback,
+      .form-select.is-invalid ~ .invalid-feedback {
+        display: block;
+      }
+
+      .consent {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        cursor: pointer;
+        padding: 0;
+      }
+      .consent input[type="checkbox"] {
+        flex: 0 0 18px;
+        width: 18px;
+        height: 18px;
+        margin: 2px 0 0;
+        border: 1.5px solid #d9dcea;
+        border-radius: 5px;
+        background: #fff;
+        appearance: none;
+        -webkit-appearance: none;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.2s ease;
+      }
+      .consent input[type="checkbox"]:checked {
+        background: #6c4df6;
+        border-color: #6c4df6;
+      }
+      .consent input[type="checkbox"]:checked::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 1px;
+        width: 6px;
+        height: 11px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+      .consent input[type="checkbox"]:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(108, 77, 246, 0.14);
+        border-color: #6c4df6;
+      }
+      .consent-text {
+        flex: 1;
+        min-width: 0;
+        font-size: clamp(12.5px, 1.4vw, 13.5px);
+        line-height: 1.55;
+        color: #64687a;
+      }
+      .consent-text a {
+        color: #5639d6;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .consent-text a:hover {
+        text-decoration: underline;
+      }
+      .was-validated .consent input[type="checkbox"]:invalid {
+        border-color: #ef4444 !important;
+      }
+      .was-validated
+        .consent
+        input[type="checkbox"]:invalid
+        ~ .consent-text
+        ~ .invalid-feedback {
+        display: block;
+      }
+
+      .form-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: clamp(20px, 3vw, 28px);
+      }
+      @media (min-width: 640px) {
+        .form-actions {
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
+        }
+      }
+      .form-trust {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: clamp(11.5px, 1.3vw, 12.5px);
+        color: #64687a;
+        margin: 0;
+        line-height: 1.4;
+      }
+      .form-trust svg {
+        flex-shrink: 0;
+      }
+
+      /* =========================================================
+     WAVE-FILL BUTTONS
+  ========================================================= */
+      .btn-wave {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: clamp(13.5px, 1.4vw, 14.5px);
+        border-radius: 999px;
+        cursor: pointer;
+        text-decoration: none;
+        white-space: nowrap;
+        padding: clamp(13px, 1.5vw, 16px) clamp(24px, 2.6vw, 34px);
+        transition:
+          color 0.35s ease,
+          transform 0.25s ease,
+          box-shadow 0.3s ease,
+          border-color 0.35s ease;
+        will-change: transform;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .btn-wave::before {
+        content: "";
+        position: absolute;
+        left: -8%;
+        right: -8%;
+        bottom: 0;
+        height: 0%;
+        background: var(--wave-bg, #fff);
+        border-radius: 50% 50% 0 0 / 28px 28px 0 0;
+        transition:
+          height 0.6s cubic-bezier(0.2, 0.7, 0.3, 1),
+          border-radius 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
+        z-index: 0;
+        pointer-events: none;
+      }
+      .btn-wave:hover::before,
+      .btn-wave:focus-visible::before,
+      .btn-wave:active::before {
+        height: 175%;
+        border-radius: 0;
+      }
+      .btn-wave > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .btn-full-mobile {
+        width: 100%;
+      }
+      @media (min-width: 640px) {
+        .btn-full-mobile {
+          width: auto;
+        }
+      }
+
+      .btn-brand {
+        background: linear-gradient(135deg, #6c4df6, #5639d6);
+        color: #fff;
+        box-shadow: 0 18px 40px -14px rgba(108, 77, 246, 0.55);
+        --wave-bg: #ffffff;
+      }
+      .btn-brand:hover,
+      .btn-brand:focus-visible {
+        color: #6c4df6;
+        box-shadow: 0 22px 48px -14px rgba(108, 77, 246, 0.7);
+        transform: translateY(-2px);
+      }
+      .btn-ghost {
+        background: transparent;
+        border: 1.5px solid rgba(255, 255, 255, 0.28);
+        color: #fff;
+        --wave-bg: #ffffff;
+      }
+      .btn-ghost:hover,
+      .btn-ghost:focus-visible {
+        color: #0f1123;
+        border-color: #fff;
+        transform: translateY(-2px);
+      }
+
+      /* =========================================================
+     MARQUEE
+  ========================================================= */
+      .marquee {
+        position: relative;
+        overflow: hidden;
+        background: #0f1123;
+      }
+      .marquee::before,
+      .marquee::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+        width: clamp(40px, 8vw, 100px);
+        pointer-events: none;
+      }
+      .marquee::before {
+        left: 0;
+        background: linear-gradient(90deg, #0f1123, transparent);
+      }
+      .marquee::after {
+        right: 0;
+        background: linear-gradient(270deg, #0f1123, transparent);
+      }
+
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marqueeScroll 32s linear infinite;
+        will-change: transform;
+      }
+      @media (hover: hover) {
+        .marquee:hover .marquee-track {
+          animation-play-state: paused;
+        }
+      }
+      @keyframes marqueeScroll {
+        from {
+          transform: translate3d(0, 0, 0);
+        }
+        to {
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+
+      .marquee-text {
+        display: inline-block;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -0.015em;
+        white-space: nowrap;
+        padding: 0 clamp(14px, 2.4vw, 34px);
+        font-size: clamp(20px, 5.2vw, 60px);
+        line-height: 1;
+      }
+      .marquee-text.is-white {
+        color: #fff;
+      }
+      .marquee-text.is-stroke {
+        color: transparent;
+        -webkit-text-stroke: clamp(1px, 0.12vw, 2px) rgba(139, 92, 246, 0.9);
+      }
+      .marquee-star {
+        font-size: clamp(16px, 3.8vw, 46px);
+        line-height: 1;
+        flex-shrink: 0;
+      }
+
+      /* =========================================================
+     MAP
+  ========================================================= */
+      .map-wrap {
+        position: relative;
+        border-radius: clamp(20px, 3vw, 32px);
+        overflow: hidden;
+        border: 1px solid #e9ebf4;
+        background: #fff;
+        box-shadow: 0 20px 60px -25px rgba(15, 17, 35, 0.25);
+      }
+      .map-frame {
+        display: block;
+        width: 100%;
+        height: clamp(260px, 45vw, 500px);
+        border: 0;
+        filter: grayscale(0.35) contrast(1.05);
+        transition: filter 0.5s ease;
+      }
+      @media (hover: hover) {
+        .map-wrap:hover .map-frame {
+          filter: grayscale(0) contrast(1);
+        }
+      }
+      .map-chip {
+        display: none;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        align-items: center;
+        gap: 14px;
+        background: rgba(15, 17, 35, 0.92);
+        backdrop-filter: blur(8px);
+        border-radius: 16px;
+        padding: 14px 18px;
+        max-width: 300px;
+      }
+      @media (min-width: 640px) {
+        .map-chip {
+          display: flex;
+          bottom: 24px;
+          left: 24px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .map-chip {
+          bottom: 28px;
+          left: 28px;
+          padding: 16px 20px;
+        }
+      }
+      .map-chip-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: #6c4df6;
+        color: #fff;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+      }
+      .map-chip-title {
+        color: #fff;
+        font-weight: 700;
+        font-size: 14px;
+        margin: 0;
+        line-height: 1.2;
+      }
+      .map-chip-sub {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 12px;
+        margin: 3px 0 0;
+        line-height: 1.35;
+      }
+
+      /* =========================================================
+     CTA
+  ========================================================= */
+      .cta {
+        position: relative;
+        background: #0f1123;
+        overflow: hidden;
+      }
+      .cta-glow {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            650px circle at 12% 18%,
+            rgba(108, 77, 246, 0.42),
+            transparent 62%
+          ),
+          radial-gradient(
+            560px circle at 88% 82%,
+            rgba(139, 92, 246, 0.34),
+            transparent 60%
+          );
+        pointer-events: none;
+      }
+      .cta-grid {
+        position: absolute;
+        inset: 0;
+        opacity: 0.5;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        background-size: 52px 52px;
+        pointer-events: none;
+      }
+      .cta-inner {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        max-width: 820px;
+        margin: 0 auto;
+      }
+      .cta-heading {
+        font-size: clamp(26px, 5vw, 56px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.12;
+        color: #fff;
+        margin: clamp(18px, 2.4vw, 26px) 0 0;
+      }
+      .cta-sub {
+        font-size: clamp(14px, 1.7vw, 17px);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.68);
+        margin: clamp(14px, 2vw, 22px) auto 0;
+        max-width: 560px;
+      }
+      .cta-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-top: clamp(24px, 4vw, 40px);
+      }
+      @media (min-width: 640px) {
+        .cta-actions {
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 14px;
+        }
+      }
+      .cta-stats {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: clamp(32px, 5vw, 56px);
+        padding-top: clamp(28px, 4vw, 40px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      @media (min-width: 640px) {
+        .cta-stats {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+        }
+      }
+      .cta-stat-num {
+        font-size: clamp(22px, 3.4vw, 32px);
+        font-weight: 800;
+        color: #fff;
+        margin: 0;
+        line-height: 1.1;
+      }
+      .cta-stat-label {
+        font-size: clamp(10px, 1.2vw, 11.5px);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: rgba(255, 255, 255, 0.5);
+        margin: 6px 0 0;
+        line-height: 1.35;
+      }
+
+      /* =========================================================
+     FOOTER
+  ========================================================= */
+      .footer-shell {
+        position: relative;
+        background: #0f1123;
+        overflow: hidden;
+        padding-top: clamp(36px, 6vw, 60px);
+        isolation: isolate;
+      }
+
+      .footer-waves {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.55;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='rgba(139,92,246,0.09)' stroke-width='1.2'%3E%3Cpath d='M-100,140 Q100,60 200,140 T500,140 T800,140'/%3E%3Cpath d='M-100,180 Q100,100 200,180 T500,180 T800,180'/%3E%3Cpath d='M-100,220 Q100,140 200,220 T500,220 T800,220'/%3E%3Cpath d='M-100,260 Q100,180 200,260 T500,260 T800,260'/%3E%3Cpath d='M-100,300 Q100,220 200,300 T500,300 T800,300'/%3E%3Cpath d='M-100,540 Q100,460 200,540 T500,540 T800,540'/%3E%3Cpath d='M-100,580 Q100,500 200,580 T500,580 T800,580'/%3E%3Cpath d='M-100,620 Q100,540 200,620 T500,620 T800,620'/%3E%3Cpath d='M-100,660 Q100,580 200,660 T500,660 T800,660'/%3E%3C/g%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-position: center;
+        background-size: 800px 800px;
+        z-index: 0;
+      }
+
+      .footer-container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      @media (min-width: 640px) {
+        .footer-container {
+          padding: 0 24px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .footer-container {
+          padding: 0 32px;
+        }
+      }
+
+      .footer-cta {
+        position: relative;
+        background: linear-gradient(135deg, #6c4df6 0%, #5639d6 100%);
+        border-radius: 18px;
+        padding: clamp(22px, 3.4vw, 40px) clamp(20px, 3.4vw, 50px);
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        align-items: flex-start;
+        box-shadow: 0 24px 60px -30px rgba(108, 77, 246, 0.7);
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+      }
+      @media (min-width: 1024px) {
+        .footer-cta {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 32px;
+          border-radius: 22px;
+        }
+      }
+
+      .footer-cta::before {
+        content: "";
+        position: absolute;
+        top: -40%;
+        right: -10%;
+        width: 55%;
+        height: 180%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.14),
+          transparent 62%
+        );
+        pointer-events: none;
+      }
+
+      .footer-cta-title {
+        position: relative;
+        color: #fff;
+        font-weight: 800;
+        font-size: clamp(19px, 3.2vw, 32px);
+        line-height: 1.22;
+        letter-spacing: -0.02em;
+        margin: 0;
+        max-width: 620px;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+      .footer-cta-title br {
+        display: none;
+      }
+      @media (min-width: 768px) {
+        .footer-cta-title br {
+          display: inline;
+        }
+      }
+
+      .footer-cta-right {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+        width: 100%;
+      }
+      @media (min-width: 640px) {
+        .footer-cta-right {
+          flex-direction: row;
+          align-items: center;
+          gap: 22px;
+          width: auto;
+        }
+      }
+
+      .footer-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 22px;
+        background: #fff;
+        color: #0f1123;
+        font-weight: 800;
+        font-size: 14px;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+        white-space: nowrap;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+        box-shadow: 0 12px 24px -12px rgba(15, 17, 35, 0.35);
+        flex-shrink: 0;
+        max-width: 100%;
+      }
+      .footer-cta-btn svg {
+        width: 15px;
+        height: 15px;
+        transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1);
+        flex-shrink: 0;
+      }
+      .footer-cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px -14px rgba(15, 17, 35, 0.5);
+      }
+      .footer-cta-btn:hover svg {
+        transform: translateX(4px);
+      }
+
+      .footer-cta-help {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+        min-width: 0;
+      }
+      .footer-cta-help-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 999px;
+        background: #7c3aed;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        box-shadow: 0 12px 24px -12px rgba(124, 58, 237, 0.8);
+      }
+      .footer-cta-help-icon svg {
+        width: 21px;
+        height: 21px;
+        color: #fff;
+      }
+      .footer-cta-help-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.25;
+        min-width: 0;
+      }
+      .footer-cta-help-label {
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.82);
+        margin: 0;
+      }
+      .footer-cta-help-number {
+        font-size: 16px;
+        font-weight: 800;
+        color: #fff;
+        margin: 3px 0 0;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
+      }
+
+      .footer-main {
+        padding-top: clamp(44px, 6vw, 76px);
+        padding-bottom: clamp(28px, 4vw, 48px);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 38px 32px;
+        width: 100%;
+      }
+      @media (min-width: 560px) {
+        .footer-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 42px 28px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .footer-grid {
+          grid-template-columns: 1.4fr 1fr 1fr 1.25fr;
+          gap: 32px 40px;
+        }
+      }
+
+      .footer-col {
+        min-width: 0;
+        width: 100%;
+      }
+
+      .footer-brandlogo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+        max-width: 100%;
+      }
+      .footer-brandlogo-icon {
+        width: auto;
+        height: 100px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-shrink: 0;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .footer-brandlogo-icon img {
+        width: auto;
+        height: 100px;
+        object-fit: contain;
+        display: block;
+      }
+
+      .footer-branddesc {
+        font-size: 14px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.62);
+        margin: 0 0 20px;
+        max-width: 340px;
+        overflow-wrap: anywhere;
+      }
+
+      .footer-signup {
+        display: flex;
+        align-items: stretch;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+        max-width: 340px;
+        margin-bottom: 22px;
+        box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.4);
+      }
+      .footer-signup input {
+        flex: 1;
+        min-width: 0;
+        width: 100%;
+        border: 0;
+        outline: 0;
+        padding: 14px 14px;
+        font-size: 14px;
+        color: #1e2033;
+        background: transparent;
+      }
+      .footer-signup input::placeholder {
+        color: #8b95ab;
+        font-weight: 500;
+      }
+      .footer-signup button {
+        border: 0;
+        background: #6c4df6;
+        color: #fff;
+        font-size: 13.5px;
+        font-weight: 700;
+        padding: 14px 18px;
+        cursor: pointer;
+        transition: background-color 0.25s ease;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .footer-signup button:hover {
+        background: #5639d6;
+      }
+
+      .footer-socials {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .footer-social {
+        width: 38px;
+        height: 38px;
+        border-radius: 999px;
+        background: #1a1c2e;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        transition:
+          background-color 0.25s ease,
+          transform 0.25s ease;
+        flex-shrink: 0;
+      }
+      .footer-social:hover {
+        background: #6c4df6;
+        transform: translateY(-3px);
+      }
+      .footer-social svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .footer-colhead {
+        font-size: 17px;
+        font-weight: 800;
+        color: #fff;
+        margin: 0 0 18px;
+        letter-spacing: -0.01em;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .footer-links li {
+        min-width: 0;
+      }
+
+      .footer-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.62);
+        transition: color 0.25s ease;
+        max-width: 100%;
+        min-width: 0;
+      }
+      .footer-link svg {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+        color: #8b5cf6;
+        transition: transform 0.25s ease;
+      }
+      .footer-link span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+      .footer-link:hover {
+        color: #fff;
+      }
+      .footer-link:hover svg {
+        transform: translateX(4px);
+      }
+
+      .footer-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+        max-width: 340px;
+      }
+      .footer-gallery-item {
+        position: relative;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #1a1c2e;
+        cursor: pointer;
+        display: block;
+      }
+      .footer-gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.3, 1);
+      }
+      .footer-gallery-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(15, 17, 35, 0.2);
+        transition: opacity 0.35s ease;
+        pointer-events: none;
+      }
+      .footer-gallery-item:hover img {
+        transform: scale(1.12);
+      }
+      .footer-gallery-item:hover::after {
+        opacity: 0;
+      }
+
+      .footer-bottom {
+        position: relative;
+        z-index: 2;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 18px 0;
+        width: 100%;
+      }
+      .footer-bottom-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        text-align: center;
+        width: 100%;
+      }
+      @media (min-width: 768px) {
+        .footer-bottom-inner {
+          flex-direction: row;
+          text-align: left;
+          gap: 20px;
+        }
+      }
+
+      .footer-bottom-left,
+      .footer-bottom-right {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.62);
+        line-height: 1.4;
+        max-width: 100%;
+        min-width: 0;
+        text-align: center;
+        justify-content: center;
+      }
+      @media (min-width: 768px) {
+        .footer-bottom-left,
+        .footer-bottom-right {
+          text-align: left;
+        }
+      }
+
+      .footer-bottom-icon {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        color: #8b5cf6;
+      }
+      .footer-bottom-left strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      .footer-bottom-left span,
+      .footer-bottom-right span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .footer-scrolltop {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        width: 46px;
+        height: 46px;
+        border-radius: 999px;
+        border: 0;
+        background: rgba(108, 77, 246, 0.92);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        z-index: 900;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        box-shadow: 0 14px 30px -12px rgba(108, 77, 246, 0.85);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease,
+          transform 0.3s ease,
+          background-color 0.25s ease;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .footer-scrolltop.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .footer-scrolltop:hover {
+        background: #6c4df6;
+        transform: translateY(-3px);
+      }
+      .footer-scrolltop svg {
+        width: 18px;
+        height: 18px;
+      }
+      @media (min-width: 640px) {
+        .footer-scrolltop {
+          right: 26px;
+          bottom: 26px;
+          width: 48px;
+          height: 48px;
+        }
+      }
+
+      /* =========================================================
+     REDUCED MOTION
+  ========================================================= */
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .marquee-track {
+          animation: none;
+        }
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================================================
+     NAVBAR
+========================================================== -->
+    <header id="navbarShell" class="navbar-shell">
+      <div class="navbar-inner">
+        <a href="./index.html" class="navbar-logo" aria-label="STACKLY home">
+          <span class="navbar-logo-wrap">
+            <span class="navbar-logo-ring"></span>
+            <span class="navbar-logo-ring navbar-logo-ring-2"></span>
+            <img
+              class="navbar-logo-img"
+              src="./assets/logo.webp"
+              alt="STACKLY logo"
+            />
+          </span>
+        </a>
+
+        <nav class="navbar-desktop" aria-label="Main navigation">
+          <a href="./index.html" class="navbar-link">Home</a>
+          <a href="./service.html" class="navbar-link">Services</a>
+          <a href="./about.html" class="navbar-link">About Us</a>
+          <a href="./blog.html" class="navbar-link">Blogs</a>
+          <a href="./contact.html" class="navbar-link is-active">Contact</a>
+        </nav>
+
+        <a href="./login.html" class="navbar-login">
+          <span>Login</span>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </a>
+
+        <button
+          type="button"
+          id="navbarHamburger"
+          class="navbar-hamburger"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="navbarMenu"
+        >
+          <span class="navbar-hamburger-line"></span>
+          <span class="navbar-hamburger-line"></span>
+          <span class="navbar-hamburger-line"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- =========================================================
+     FULL-SCREEN MOBILE MENU
+========================================================== -->
+    <div
+      id="navbarMenu"
+      class="navbar-menu"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="navbar-menu-grid"></div>
+
+      <div class="navbar-menu-inner">
+        <div class="navbar-menu-head">
+          <a href="./index.html" class="navbar-logo" aria-label="STACKLY home">
+            <span class="navbar-logo-wrap">
+              <span class="navbar-logo-ring"></span>
+              <span class="navbar-logo-ring navbar-logo-ring-2"></span>
+              <img
+                class="navbar-logo-img"
+                src="./assets/logo.webp"
+                alt="STACKLY logo"
+              />
+            </span>
+          </a>
+
+          <button
+            type="button"
+            id="navbarClose"
+            class="navbar-close"
+            aria-label="Close menu"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </div>
+
+        <nav class="navbar-menu-nav" aria-label="Mobile navigation">
+          <a href="./index.html" class="navbar-menu-link">
+            <span class="navbar-menu-num">01</span>
+            <span class="navbar-menu-text">Home</span>
+          </a>
+          <a href="./service.html" class="navbar-menu-link">
+            <span class="navbar-menu-num">02</span>
+            <span class="navbar-menu-text">Services</span>
+          </a>
+          <a href="./about.html" class="navbar-menu-link">
+            <span class="navbar-menu-num">03</span>
+            <span class="navbar-menu-text">About Us</span>
+          </a>
+          <a href="./blog.html" class="navbar-menu-link">
+            <span class="navbar-menu-num">04</span>
+            <span class="navbar-menu-text">Blogs</span>
+          </a>
+          <a href="./contact.html" class="navbar-menu-link is-active">
+            <span class="navbar-menu-num">05</span>
+            <span class="navbar-menu-text">Contact</span>
+          </a>
+        </nav>
+
+        <div class="navbar-menu-foot">
+          <a href="./login.html" class="navbar-menu-login">
+            <span>Login</span>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================
+     1. HERO
+========================================================== -->
+    <section class="hero">
+      <img
+        src="./assets/c1.webp"
+        alt="STACKLY health insurance support team"
+        class="hero-bg"
+        loading="eager"
+      />
+
+      <div class="hero-overlay"></div>
+      <div class="hero-grid-lines"></div>
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+
+      <div class="page-container" style="position: relative; z-index: 10">
+        <div style="max-width: 720px">
+          <span class="hero-el hero-badge">
+            <span
+              style="
+                width: 6px;
+                height: 6px;
+                border-radius: 999px;
+                background: #6c4df6;
+              "
+            ></span>
+            Contact STACKLY
+          </span>
+
+          <h1 class="hero-el hero-heading">
+            Let's talk about
+            <span
+              style="
+                background: linear-gradient(90deg, #6c4df6, #8b5cf6, #7c3aed);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              "
+              >your health cover.</span
+            >
+          </h1>
+
+          <p class="hero-el hero-sub">
+            Questions about a plan, a claim, or coverage for your family? Our
+            licensed advisors respond within one business day — no jargon, no
+            pressure.
+          </p>
+
+          <nav
+            class="hero-el"
+            aria-label="Breadcrumb"
+            style="margin-top: clamp(20px, 3vw, 32px)"
+          >
+            <ol
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                font-size: clamp(13px, 1.4vw, 14px);
+              "
+            >
+              <li>
+                <a
+                  href="./index.html"
+                  style="
+                    color: rgba(255, 255, 255, 0.55);
+                    text-decoration: none;
+                    font-weight: 500;
+                  "
+                  >Home</a
+                >
+              </li>
+              <li style="color: rgba(255, 255, 255, 0.25)">/</li>
+              <li style="color: #6c4df6; font-weight: 700">Contact</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     2. FOUR INFO CARDS
+========================================================== -->
+    <section class="section-pad-sm" style="background: #f7f8fc">
+      <div class="page-container">
+        <div class="cards-grid">
+          <article class="info-card" data-aos="fade-up" data-aos-delay="0">
+            <span
+              class="info-icon"
+              style="background: rgba(108, 77, 246, 0.1); color: #5639d6"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 21s-7-5.1-7-11a7 7 0 1 1 14 0c0 5.9-7 11-7 11z" />
+                <circle cx="12" cy="10" r="2.6" />
+              </svg>
+            </span>
+            <h3 class="info-title">Visit Our Office</h3>
+            <p class="info-body">
+              128 Wellness Avenue,<br />Suite 400, New York,<br />NY 10012
+            </p>
+            <a
+              href="./404.html"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                margin-top: 14px;
+                color: #5639d6;
+                font-weight: 700;
+                font-size: 13.5px;
+                text-decoration: none;
+              "
+            >
+              Get directions
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="info-card" data-aos="fade-up" data-aos-delay="80">
+            <span
+              class="info-icon"
+              style="background: rgba(139, 92, 246, 0.1); color: #7c3aed"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"
+                />
+              </svg>
+            </span>
+            <h3 class="info-title">Call Us</h3>
+            <p class="info-body">
+              Sales:
+              <a
+                href="./404.html"
+                class="nowrap"
+                style="color: #1e2033; font-weight: 600; text-decoration: none"
+                >+1 (800) 555-0142</a
+              ><br />
+              Claims:
+              <a
+                href="./404.html"
+                class="nowrap"
+                style="color: #1e2033; font-weight: 600; text-decoration: none"
+                >+1 (212) 555-0188</a
+              >
+            </p>
+            <p class="info-meta">Mon–Fri, 8am – 7pm EST</p>
+          </article>
+
+          <article class="info-card" data-aos="fade-up" data-aos-delay="160">
+            <span
+              class="info-icon"
+              style="background: rgba(108, 77, 246, 0.1); color: #5639d6"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="3" />
+                <path d="m3 7 9 6 9-6" />
+              </svg>
+            </span>
+            <h3 class="info-title">Email Us</h3>
+            <p class="info-body">
+              <a
+                href="./404.html"
+                style="
+                  color: #1e2033;
+                  font-weight: 600;
+                  text-decoration: none;
+                  word-break: break-word;
+                "
+                >support@stackly.com</a
+              ><br />
+              <a
+                href="./404.html"
+                style="
+                  color: #1e2033;
+                  font-weight: 600;
+                  text-decoration: none;
+                  word-break: break-word;
+                "
+                >claims@stackly.com</a
+              >
+            </p>
+            <p class="info-meta">Replies within 24 hours</p>
+          </article>
+
+          <article class="info-card" data-aos="fade-up" data-aos-delay="240">
+            <span
+              class="info-icon"
+              style="background: rgba(139, 92, 246, 0.1); color: #7c3aed"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3.2 2" />
+              </svg>
+            </span>
+            <h3 class="info-title">Working Hours</h3>
+            <ul
+              style="
+                list-style: none;
+                margin: 12px 0 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 7px;
+                font-size: clamp(13px, 1.5vw, 14px);
+              "
+            >
+              <li
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  gap: 10px;
+                  color: #64687a;
+                "
+              >
+                <span>Mon – Fri</span
+                ><span style="color: #1e2033; font-weight: 600" class="nowrap"
+                  >8:00 – 19:00</span
+                >
+              </li>
+              <li
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  gap: 10px;
+                  color: #64687a;
+                "
+              >
+                <span>Saturday</span
+                ><span style="color: #1e2033; font-weight: 600" class="nowrap"
+                  >9:00 – 15:00</span
+                >
+              </li>
+              <li
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  gap: 10px;
+                  color: #64687a;
+                "
+              >
+                <span>Sunday</span
+                ><span style="color: #5639d6; font-weight: 700">Closed</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     3. CONTACT — INFO + FORM
+========================================================== -->
+    <section
+      id="contact-form"
+      class="section-pad"
+      style="
+        background: #fff;
+        border-top: 1px solid #eef0f7;
+        border-bottom: 1px solid #eef0f7;
+      "
+    >
+      <div class="page-container">
+        <div class="contact-split">
+          <div data-aos="fade-up">
+            <span class="section-pill">
+              <span class="section-pill-dot"></span>
+              Get In Touch
+            </span>
+
+            <h2 class="section-heading">
+              We're here to help you<br />
+              <span
+                style="
+                  background: linear-gradient(90deg, #6c4df6, #7c3aed);
+                  -webkit-background-clip: text;
+                  background-clip: text;
+                  color: transparent;
+                "
+                >every step of the way.</span
+              >
+            </h2>
+
+            <p class="section-sub">
+              Whether you're comparing plans for the first time or filing a
+              claim, a real human from STACKLY is ready to guide you.
+            </p>
+
+            <ul class="info-list">
+              <li class="info-row">
+                <span
+                  class="info-row-icon"
+                  style="background: rgba(108, 77, 246, 0.1); color: #5639d6"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M12 21s-7-5.1-7-11a7 7 0 1 1 14 0c0 5.9-7 11-7 11z"
+                    />
+                    <circle cx="12" cy="10" r="2.6" />
+                  </svg>
+                </span>
+                <div>
+                  <p class="info-row-label">Head Office</p>
+                  <p class="info-row-value">
+                    128 Wellness Avenue, Suite 400<br />New York, NY 10012
+                  </p>
+                </div>
+              </li>
+
+              <li class="info-row">
+                <span
+                  class="info-row-icon"
+                  style="background: rgba(139, 92, 246, 0.1); color: #7c3aed"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <p class="info-row-label">Phone</p>
+                  <p class="info-row-value">
+                    <a href="./404.html" class="nowrap">+1 (800) 555-0142</a>
+                  </p>
+                </div>
+              </li>
+
+              <li class="info-row">
+                <span
+                  class="info-row-icon"
+                  style="background: rgba(108, 77, 246, 0.1); color: #5639d6"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="2" y="4" width="20" height="16" rx="3" />
+                    <path d="m3 7 9 6 9-6" />
+                  </svg>
+                </span>
+                <div>
+                  <p class="info-row-label">Email</p>
+                  <p class="info-row-value">
+                    <a href="./404.html" style="word-break: break-word"
+                      >support@stackly.com</a
+                    >
+                  </p>
+                </div>
+              </li>
+
+              <li class="info-row">
+                <span
+                  class="info-row-icon"
+                  style="background: rgba(139, 92, 246, 0.1); color: #7c3aed"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.9 8.9 0 0 1-3.9-.9L3 20.5l1.5-4.6A8.4 8.4 0 0 1 3.6 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <p class="info-row-label">Live Chat</p>
+                  <p class="info-row-value">
+                    Available 24/7 in your member portal
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="100">
+            <div class="form-card">
+              <div class="form-card-glow"></div>
+
+              <div style="position: relative">
+                <h3 class="form-title">Send us a message</h3>
+                <p class="form-desc">
+                  All fields are required. We usually reply within one business
+                  day.
+                </p>
+
+                <form id="contactForm" class="needs-validation" novalidate>
+                  <div class="form-grid">
+                    <div>
+                      <label for="firstName" class="form-label"
+                        >First Name <span class="req">*</span></label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="firstName"
+                        name="firstName"
+                        placeholder="Jane"
+                        required
+                        minlength="2"
+                        autocomplete="given-name"
+                      />
+                      <div class="invalid-feedback">
+                        Please enter your first name.
+                      </div>
+                    </div>
+
+                    <div>
+                      <label for="lastName" class="form-label"
+                        >Last Name <span class="req">*</span></label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="lastName"
+                        name="lastName"
+                        placeholder="Doe"
+                        required
+                        minlength="2"
+                        autocomplete="family-name"
+                      />
+                      <div class="invalid-feedback">
+                        Please enter your last name.
+                      </div>
+                    </div>
+
+                    <div>
+                      <label for="email" class="form-label"
+                        >Email Address <span class="req">*</span></label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="jane@example.com"
+                        required
+                        autocomplete="email"
+                      />
+                      <div class="invalid-feedback">
+                        Please enter a valid email address.
+                      </div>
+                    </div>
+
+                    <div>
+                      <label for="phone" class="form-label"
+                        >Phone Number <span class="req">*</span></label
+                      >
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="phone"
+                        name="phone"
+                        placeholder="+1 (555) 000-0000"
+                        required
+                        pattern="^[0-9+()\-\s]{7,20}$"
+                        autocomplete="tel"
+                      />
+                      <div class="invalid-feedback">
+                        Please enter a valid phone number.
+                      </div>
+                    </div>
+
+                    <div class="col-full">
+                      <label for="topic" class="form-label"
+                        >What can we help with?
+                        <span class="req">*</span></label
+                      >
+                      <select
+                        class="form-select"
+                        id="topic"
+                        name="topic"
+                        required
+                      >
+                        <option value="" selected disabled>
+                          Select a topic…
+                        </option>
+                        <option value="individual">
+                          Individual Health Plan
+                        </option>
+                        <option value="family">Family Coverage</option>
+                        <option value="business">Business / Group Plan</option>
+                        <option value="claims">
+                          Claims &amp; Reimbursement
+                        </option>
+                        <option value="renewal">Policy Renewal</option>
+                        <option value="other">Something Else</option>
+                      </select>
+                      <div class="invalid-feedback">Please choose a topic.</div>
+                    </div>
+
+                    <div class="col-full">
+                      <label for="message" class="form-label"
+                        >Your Message <span class="req">*</span></label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Tell us a little about what you need…"
+                        required
+                        minlength="10"
+                      ></textarea>
+                      <div class="invalid-feedback">
+                        Please write at least 10 characters.
+                      </div>
+                    </div>
+
+                    <div class="col-full">
+                      <label class="consent">
+                        <input
+                          type="checkbox"
+                          id="consent"
+                          name="consent"
+                          required
+                        />
+                        <span class="consent-text">
+                          I agree to STACKLY's
+                          <a href="#">Privacy Policy</a>
+                          and consent to being contacted about my enquiry.
+                          <span style="color: #6c4df6; font-weight: 700"
+                            >*</span
+                          >
+                        </span>
+                      </label>
+                      <div class="invalid-feedback" style="margin-left: 28px">
+                        You must agree before submitting.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-actions">
+                    <button
+                      type="submit"
+                      class="btn-wave btn-brand btn-full-mobile"
+                    >
+                      <span>Send Message</span>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                      </svg>
+                    </button>
+
+                    <p class="form-trust">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#5639D6"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <rect x="4" y="10" width="16" height="10" rx="2" />
+                        <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+                      </svg>
+                      Your data is encrypted and never shared.
+                    </p>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     4. MARQUEE
+========================================================== -->
+    <section
+      class="marquee"
+      style="padding: clamp(22px, 3.4vw, 44px) 0"
+      aria-hidden="true"
+    >
+      <div class="marquee-track">
+        <div style="display: flex; align-items: center; flex-shrink: 0">
+          <span class="marquee-text is-white">Get Covered</span>
+          <span class="marquee-star" style="color: #6c4df6">✦</span>
+          <span class="marquee-text is-stroke">Stay Protected</span>
+          <span class="marquee-star" style="color: #8b5cf6">✦</span>
+          <span class="marquee-text is-white">Family Plans</span>
+          <span class="marquee-star" style="color: #6c4df6">✦</span>
+          <span class="marquee-text is-stroke">Zero Hidden Fees</span>
+          <span class="marquee-star" style="color: #8b5cf6">✦</span>
+          <span class="marquee-text is-white">24/7 Support</span>
+          <span class="marquee-star" style="color: #6c4df6">✦</span>
+        </div>
+
+        <div style="display: flex; align-items: center; flex-shrink: 0">
+          <span class="marquee-text is-white">Get Covered</span>
+          <span class="marquee-star" style="color: #6c4df6">✦</span>
+          <span class="marquee-text is-stroke">Stay Protected</span>
+          <span class="marquee-star" style="color: #8b5cf6">✦</span>
+          <span class="marquee-text is-white">Family Plans</span>
+          <span class="marquee-star" style="color: #6c4df6">✦</span>
+          <span class="marquee-text is-stroke">Zero Hidden Fees</span>
+          <span class="marquee-star" style="color: #8b5cf6">✦</span>
+          <span class="marquee-text is-white">24/7 Support</span>
+          <span class="marquee-star" style="color: #6c4df6">✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     5. MAP
+========================================================== -->
+    <section id="map" class="section-pad" style="background: #f7f8fc">
+      <div class="page-container">
+        <div
+          style="max-width: 640px; margin-bottom: clamp(24px, 4vw, 48px)"
+          data-aos="fade-up"
+        >
+          <span class="section-pill">
+            <span class="section-pill-dot"></span>
+            Find Us
+          </span>
+          <h2 class="section-heading">
+            Visit our
+            <span
+              style="
+                background: linear-gradient(90deg, #6c4df6, #7c3aed);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              "
+              >New York office</span
+            >
+          </h2>
+          <p class="section-sub">
+            Drop by for a face-to-face consultation — walk-ins welcome,
+            appointments preferred.
+          </p>
+        </div>
+
+        <div class="map-wrap" data-aos="zoom-in-up">
+          <iframe
+            class="map-frame"
+            src="https://maps.google.com/maps?q=SoHo%2C%20New%20York%2C%20NY&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            title="STACKLY head office location on Google Maps"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          >
+          </iframe>
+
+          <div class="map-chip">
+            <span class="map-chip-icon">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 21s-7-5.1-7-11a7 7 0 1 1 14 0c0 5.9-7 11-7 11z" />
+                <circle cx="12" cy="10" r="2.6" />
+              </svg>
+            </span>
+            <div>
+              <p class="map-chip-title">STACKLY HQ</p>
+              <p class="map-chip-sub">128 Wellness Ave, Suite 400, NY 10012</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     6. CTA
+========================================================== -->
+    <section class="cta">
+      <div class="cta-glow"></div>
+      <div class="cta-grid"></div>
+
+      <div
+        class="page-container"
+        style="
+          position: relative;
+          z-index: 1;
+          padding-top: clamp(56px, 8vw, 112px);
+          padding-bottom: clamp(56px, 8vw, 112px);
+        "
+      >
+        <div class="cta-inner">
+          <span class="hero-badge">
+            <span
+              style="
+                width: 6px;
+                height: 6px;
+                border-radius: 999px;
+                background: #6c4df6;
+              "
+            ></span>
+            Ready When You Are
+          </span>
+
+          <h2 class="cta-heading" data-aos="fade-up">
+            Coverage that fits your life —<br />
+            <span
+              style="
+                background: linear-gradient(90deg, #6c4df6, #8b5cf6, #7c3aed);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              "
+              >and your budget.</span
+            >
+          </h2>
+
+          <p class="cta-sub" data-aos="fade-up" data-aos-delay="100">
+            Get a free, no-obligation quote in under 2 minutes. Compare plans,
+            add family members, and see exactly what you'd pay.
+          </p>
+
+          <div class="cta-actions" data-aos="fade-up" data-aos-delay="200">
+            <a href="./404.html" class="btn-wave btn-brand btn-full-mobile">
+              <span>Get Your Free Quote</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a href="./404.html" class="btn-wave btn-ghost btn-full-mobile">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"
+                />
+              </svg>
+              <span>Talk to an Advisor</span>
+            </a>
+          </div>
+
+          <div class="cta-stats" data-aos="fade-up" data-aos-delay="300">
+            <div>
+              <p class="cta-stat-num" data-count="120">0</p>
+              <p class="cta-stat-label">K+ Members</p>
+            </div>
+            <div>
+              <p class="cta-stat-num" data-count="98">0</p>
+              <p class="cta-stat-label">% Claims Paid</p>
+            </div>
+            <div>
+              <p class="cta-stat-num" data-count="24">0</p>
+              <p class="cta-stat-label">/7 Human Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     7. FOOTER
+========================================================== -->
+    <div class="footer-shell">
+      <div class="footer-waves" aria-hidden="true"></div>
+
+      <div class="footer-container">
+        <section class="footer-cta">
+          <h2 class="footer-cta-title">
+            Find an Insurance Agent or Start<br />
+            Tracking your Claims
+          </h2>
+
+          <div class="footer-cta-right">
+            <a
+              href="./404.html"
+              class="footer-cta-btn"
+              style="text-decoration: none"
+            >
+              <span>Track Your Claim</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+
+            <div class="footer-cta-help">
+              <span class="footer-cta-help-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                  <path
+                    d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+                  />
+                </svg>
+              </span>
+              <div class="footer-cta-help-text">
+                <p class="footer-cta-help-label">Need Help?</p>
+                <p class="footer-cta-help-number">+91(123)456 88</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="footer-main">
+          <div class="footer-grid">
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="0">
+              <a href="./index.html" class="footer-brandlogo">
+                <span class="footer-brandlogo-icon">
+                  <img src="./assets/logo.webp" alt="STACKLY" />
+                </span>
+              </a>
+
+              <p class="footer-branddesc">
+                Sed ut perspiciatis unde omnis iste natus errors voluptatem
+                accusantium doloremque laudantium totam
+              </p>
+
+              <form class="footer-signup" action="./404.html">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  aria-label="Your email address"
+                  required
+                />
+                <button type="submit">Sign up</button>
+              </form>
+
+              <div class="footer-socials">
+                <a
+                  href="./404.html"
+                  class="footer-social"
+                  aria-label="Facebook"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.29-.04-1.27-.13-2.41-.13-2.38 0-4.02 1.45-4.02 4.12V9.9H7.5V13h2.77v8z"
+                    />
+                  </svg>
+                </a>
+                <a href="./404.html" class="footer-social" aria-label="Twitter">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1.6 2h6.4l4.4 5.9zm-1.1 18h1.7L7.3 3.7H5.5z"
+                    />
+                  </svg>
+                </a>
+                <a href="./404.html" class="footer-social" aria-label="Skype">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M19.6 14.2c0 3-2.4 5.4-5.4 5.4-1.6 0-3-.7-4-1.8-.4.1-.8.2-1.2.2-3.1 0-5.6-2.5-5.6-5.6 0-.5.1-1 .2-1.5C2.5 9.7 2 8.5 2 7.2 2 4.2 4.4 1.8 7.4 1.8c1.3 0 2.5.5 3.4 1.3.4-.1.8-.1 1.2-.1 3.1 0 5.6 2.5 5.6 5.6 0 .4-.1.8-.1 1.2.8.9 1.3 2.1 1.3 3.4zm-8 4.4c2.7 0 4.9-2.2 4.9-4.9 0-.9-.3-1.8-.8-2.5l-.5-.7.2-.8c.1-.4.2-.8.2-1.2 0-2.4-2-4.4-4.4-4.4-.4 0-.8.1-1.2.2l-.8.2-.7-.5c-.7-.5-1.6-.8-2.5-.8-2.2 0-4.1 1.8-4.1 4.1 0 .9.3 1.8.8 2.5l.5.7-.2.8c-.1.4-.2.8-.2 1.2 0 2.4 2 4.4 4.4 4.4.4 0 .8-.1 1.2-.2l.8-.2.7.5c.7.5 1.6.8 2.5.8z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="./404.html"
+                  class="footer-social"
+                  aria-label="Instagram"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle
+                      cx="17.5"
+                      cy="6.5"
+                      r="1.2"
+                      fill="currentColor"
+                      stroke="none"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="80">
+              <h4 class="footer-colhead">Services</h4>
+              <ul class="footer-links">
+                <li>
+                  <a href="./404.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>House Insurance</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./404.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Medical Insurance</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./404.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Car Insurance</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./404.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Business Insurance</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./404.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Travel Insurance</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./404.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Fire Insurance</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./404.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Marrige Insurance</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="160">
+              <h4 class="footer-colhead">Other Pages</h4>
+              <ul class="footer-links">
+                <li>
+                  <a href="./index.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Home</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./service.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Services</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./blog.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Blog</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./about.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>About Us</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./contact.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Contact Us</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="240">
+              <h4 class="footer-colhead">Photo Gallery</h4>
+              <div class="footer-gallery">
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f1.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f2.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f3.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f4.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f5.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f6.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f7.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f8.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f9.webp" alt="" loading="lazy"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-container">
+          <div class="footer-bottom-inner">
+            <div class="footer-bottom-left">
+              <svg
+                class="footer-bottom-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 2l8 4v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4z" />
+              </svg>
+              <span
+                >Copyright 2025, <strong>STACKLY</strong>. All Rights
+                Reserved</span
+              >
+            </div>
+
+            <div class="footer-bottom-right">
+              <svg
+                class="footer-bottom-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+              <span>Working Hours : Sun-monday 09am–5pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================
+     SCROLL TO TOP
+========================================================== -->
+    <button
+      type="button"
+      class="footer-scrolltop"
+      id="footerScrollTop"
+      aria-label="Scroll to top"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+    <!-- =========================================================
+     SCRIPTS
+========================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      (function () {
+        "use strict";
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        /* ---------- AOS ---------- */
+        try {
+          if (window.AOS) {
+            AOS.init({
+              duration: 700,
+              easing: "ease-out-cubic",
+              once: true,
+              offset: 60,
+              disable: reduceMotion,
+            });
+          }
+        } catch (e) {
+          console.warn("AOS failed", e);
+        }
+
+        /* Safety net: force any still-hidden element to appear after 2s */
+        setTimeout(function () {
+          document.querySelectorAll("[data-aos]").forEach(function (el) {
+            var cs = window.getComputedStyle(el);
+            if (parseFloat(cs.opacity) < 0.1) {
+              el.style.opacity = "1";
+              el.style.transform = "none";
+            }
+          });
+        }, 2000);
+
+        /* ---------- NAVBAR ---------- */
+        const shell = document.getElementById("navbarShell");
+        function handleNavScroll() {
+          if (!shell) return;
+          if (window.scrollY > 20) shell.classList.add("is-scrolled");
+          else shell.classList.remove("is-scrolled");
+        }
+        handleNavScroll();
+        window.addEventListener("scroll", handleNavScroll, { passive: true });
+
+        const menu = document.getElementById("navbarMenu");
+        const hamburger = document.getElementById("navbarHamburger");
+        const closeBtn = document.getElementById("navbarClose");
+
+        function openMenu() {
+          if (!menu) return;
+          menu.classList.add("is-open");
+          menu.setAttribute("aria-hidden", "false");
+          document.body.classList.add("navbar-locked");
+          if (hamburger) hamburger.setAttribute("aria-expanded", "true");
+        }
+        function closeMenu() {
+          if (!menu) return;
+          menu.classList.remove("is-open");
+          menu.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("navbar-locked");
+          if (hamburger) hamburger.setAttribute("aria-expanded", "false");
+        }
+        if (hamburger) hamburger.addEventListener("click", openMenu);
+        if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+        if (menu) {
+          menu.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", closeMenu);
+          });
+        }
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && menu && menu.classList.contains("is-open"))
+            closeMenu();
+        });
+        let resizeTimer;
+        window.addEventListener("resize", function () {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(function () {
+            if (
+              window.innerWidth >= 1024 &&
+              menu &&
+              menu.classList.contains("is-open")
+            )
+              closeMenu();
+          }, 120);
+        });
+
+        /* ---------- FOOTER — scroll to top ---------- */
+        const scrollTopBtn = document.getElementById("footerScrollTop");
+        function handleFooterScroll() {
+          if (!scrollTopBtn) return;
+          if (window.scrollY > 400) scrollTopBtn.classList.add("is-visible");
+          else scrollTopBtn.classList.remove("is-visible");
+        }
+        handleFooterScroll();
+        window.addEventListener("scroll", handleFooterScroll, {
+          passive: true,
+        });
+        if (scrollTopBtn) {
+          scrollTopBtn.addEventListener("click", function () {
+            window.scrollTo({
+              top: 0,
+              behavior: reduceMotion ? "auto" : "smooth",
+            });
+          });
+        }
+
+        /* ---------- GSAP — hero + counters + footer gallery ---------- */
+        if (!reduceMotion && window.gsap) {
+          try {
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap
+              .timeline({ defaults: { ease: "power3.out" } })
+              .from(".hero-el", {
+                y: 26,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.12,
+                delay: 0.15,
+              });
+
+            document.querySelectorAll("[data-count]").forEach(function (el) {
+              const target = parseFloat(el.getAttribute("data-count"));
+              const obj = { val: 0 };
+              ScrollTrigger.create({
+                trigger: el,
+                start: "top 92%",
+                once: true,
+                onEnter: function () {
+                  gsap.to(obj, {
+                    val: target,
+                    duration: 1.6,
+                    ease: "power2.out",
+                    onUpdate: function () {
+                      el.textContent = Math.round(obj.val);
+                    },
+                  });
+                },
+              });
+            });
+
+            gsap.from(".footer-gallery-item", {
+              y: 16,
+              opacity: 0,
+              duration: 0.5,
+              ease: "power3.out",
+              stagger: 0.04,
+              scrollTrigger: {
+                trigger: ".footer-gallery",
+                start: "top 88%",
+                once: true,
+              },
+            });
+          } catch (err) {
+            console.warn("GSAP animations failed", err);
+          }
+        } else {
+          document.querySelectorAll("[data-count]").forEach(function (el) {
+            el.textContent = el.getAttribute("data-count");
+          });
+        }
+
+        /* ---------- CONTACT FORM — validate + redirect ---------- */
+        const form = document.getElementById("contactForm");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          let allFilled = true;
+          form
+            .querySelectorAll(
+              "input[required], select[required], textarea[required]",
+            )
+            .forEach(function (field) {
+              if (field.type === "checkbox") {
+                if (!field.checked) allFilled = false;
+              } else if (!field.value.trim()) {
+                allFilled = false;
+              }
+            });
+
+          if (!form.checkValidity() || !allFilled) {
+            form.classList.add("was-validated");
+            const firstInvalid = form.querySelector(":invalid");
+            if (firstInvalid) {
+              firstInvalid.focus({ preventScroll: true });
+              firstInvalid.scrollIntoView({
+                behavior: reduceMotion ? "auto" : "smooth",
+                block: "center",
+              });
+            }
+            return;
+          }
+
+          form.classList.remove("was-validated");
+          window.location.href = "./404.html";
+        });
+
+        form
+          .querySelectorAll("input, select, textarea")
+          .forEach(function (field) {
+            const h = function () {
+              if (form.classList.contains("was-validated")) {
+                field.classList.toggle("is-invalid", !field.checkValidity());
+              }
+            };
+            field.addEventListener("input", h);
+            field.addEventListener("change", h);
+            field.addEventListener("blur", h);
+          });
+      })();
+    </script>
+  </body>
+</html>

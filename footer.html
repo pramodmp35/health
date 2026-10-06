@@ -1,0 +1,1216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STACKLY — Footer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: { preflight: false },
+        theme: {
+          extend: {
+            colors: {
+              ink: "#0F1123",
+              slate: "#1A1C2E",
+              brand: { DEFAULT: "#6C4DF6", 600: "#5639D6", 700: "#442BB5" },
+              violet: { DEFAULT: "#8B5CF6", 600: "#7C3AED" },
+              cream: "#F7F8FC",
+              inkText: "#1E2033",
+              muted: "#64687A",
+            },
+            fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* =========================================================
+     BASE + MOBILE OVERFLOW GUARDS
+  ========================================================= */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        min-width: 0;
+      }
+
+      html {
+        -webkit-text-size-adjust: 100%;
+        overflow-x: clip;
+        max-width: 100%;
+      }
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+        margin: 0;
+        background: #0f1123;
+        color: #fff;
+        line-height: 1.5;
+        overflow-x: clip;
+        max-width: 100vw;
+        width: 100%;
+      }
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      input,
+      button {
+        font-family: inherit;
+      }
+
+      /* Safety: ensure content stays visible even if JS fails */
+      html:not(.aos-init) [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      /* Global wrap guards */
+      .footer-shell,
+      .footer-container,
+      .footer-main,
+      .footer-grid,
+      .footer-col,
+      .footer-cta,
+      .footer-cta-right,
+      .footer-links,
+      .footer-socials,
+      .footer-gallery,
+      .footer-bottom,
+      .footer-bottom-inner,
+      .footer-signup,
+      .footer-brandlogo {
+        max-width: 100%;
+      }
+
+      /* =========================================================
+     FOOTER SHELL
+  ========================================================= */
+      .footer-shell {
+        position: relative;
+        background: #0f1123;
+        overflow: hidden;
+        padding-top: clamp(36px, 6vw, 60px);
+        isolation: isolate;
+      }
+
+      /* Wave pattern overlay (subtle, clipped) */
+      .footer-waves {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.55;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='rgba(139,92,246,0.09)' stroke-width='1.2'%3E%3Cpath d='M-100,140 Q100,60 200,140 T500,140 T800,140'/%3E%3Cpath d='M-100,180 Q100,100 200,180 T500,180 T800,180'/%3E%3Cpath d='M-100,220 Q100,140 200,220 T500,220 T800,220'/%3E%3Cpath d='M-100,260 Q100,180 200,260 T500,260 T800,260'/%3E%3Cpath d='M-100,300 Q100,220 200,300 T500,300 T800,300'/%3E%3Cpath d='M-100,540 Q100,460 200,540 T500,540 T800,540'/%3E%3Cpath d='M-100,580 Q100,500 200,580 T500,580 T800,580'/%3E%3Cpath d='M-100,620 Q100,540 200,620 T500,620 T800,620'/%3E%3Cpath d='M-100,660 Q100,580 200,660 T500,660 T800,660'/%3E%3C/g%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-position: center;
+        background-size: 800px 800px;
+        z-index: 0;
+      }
+
+      .footer-container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      @media (min-width: 640px) {
+        .footer-container {
+          padding: 0 24px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .footer-container {
+          padding: 0 32px;
+        }
+      }
+
+      /* =========================================================
+     TOP CTA BANNER
+  ========================================================= */
+      .footer-cta {
+        position: relative;
+        background: linear-gradient(135deg, #6c4df6 0%, #5639d6 100%);
+        border-radius: 18px;
+        padding: clamp(22px, 3.4vw, 40px) clamp(20px, 3.4vw, 50px);
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        align-items: flex-start;
+        box-shadow: 0 24px 60px -30px rgba(108, 77, 246, 0.7);
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+      }
+      @media (min-width: 1024px) {
+        .footer-cta {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 32px;
+          border-radius: 22px;
+        }
+      }
+
+      .footer-cta::before {
+        content: "";
+        position: absolute;
+        top: -40%;
+        right: -10%;
+        width: 55%;
+        height: 180%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.14),
+          transparent 62%
+        );
+        pointer-events: none;
+      }
+
+      .footer-cta-title {
+        position: relative;
+        color: #fff;
+        font-weight: 800;
+        font-size: clamp(19px, 3.2vw, 32px);
+        line-height: 1.22;
+        letter-spacing: -0.02em;
+        margin: 0;
+        max-width: 620px;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+      .footer-cta-title br {
+        display: none;
+      }
+      @media (min-width: 768px) {
+        .footer-cta-title br {
+          display: inline;
+        }
+      }
+
+      .footer-cta-right {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+        width: 100%;
+      }
+      @media (min-width: 640px) {
+        .footer-cta-right {
+          flex-direction: row;
+          align-items: center;
+          gap: 22px;
+          width: auto;
+        }
+      }
+
+      .footer-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 22px;
+        background: #fff;
+        color: #0f1123;
+        font-weight: 800;
+        font-size: 14px;
+        letter-spacing: 0.02em;
+        border-radius: 10px;
+        white-space: nowrap;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+        box-shadow: 0 12px 24px -12px rgba(15, 17, 35, 0.35);
+        flex-shrink: 0;
+        max-width: 100%;
+      }
+      .footer-cta-btn svg {
+        width: 15px;
+        height: 15px;
+        transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1);
+        flex-shrink: 0;
+      }
+      .footer-cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px -14px rgba(15, 17, 35, 0.5);
+      }
+      .footer-cta-btn:hover svg {
+        transform: translateX(4px);
+      }
+
+      .footer-cta-help {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+        min-width: 0;
+      }
+      .footer-cta-help-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 999px;
+        background: #7c3aed;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        box-shadow: 0 12px 24px -12px rgba(124, 58, 237, 0.8);
+      }
+      .footer-cta-help-icon svg {
+        width: 21px;
+        height: 21px;
+        color: #fff;
+      }
+      .footer-cta-help-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.25;
+        min-width: 0;
+      }
+      .footer-cta-help-label {
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.82);
+        margin: 0;
+      }
+      .footer-cta-help-number {
+        font-size: 16px;
+        font-weight: 800;
+        color: #fff;
+        margin: 3px 0 0;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
+      }
+
+      /* =========================================================
+     MAIN FOOTER GRID
+  ========================================================= */
+      .footer-main {
+        padding-top: clamp(44px, 6vw, 76px);
+        padding-bottom: clamp(28px, 4vw, 48px);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 38px 32px;
+        width: 100%;
+      }
+      @media (min-width: 560px) {
+        .footer-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 42px 28px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .footer-grid {
+          grid-template-columns: 1.4fr 1fr 1fr 1.25fr;
+          gap: 32px 40px;
+        }
+      }
+
+      .footer-col {
+        min-width: 0;
+        width: 100%;
+      }
+
+      /* --- Brand column --- */
+      .footer-brandlogo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+        max-width: 100%;
+      }
+      .footer-brandlogo-icon {
+        width: auto;
+        height: 100px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-shrink: 0;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .footer-brandlogo-icon img {
+        width: auto;
+        height: 100px;
+        object-fit: contain;
+        display: block;
+      }
+      .footer-brandlogo-text {
+        font-weight: 800;
+        font-size: 20px;
+        letter-spacing: -0.01em;
+        color: #fff;
+        white-space: nowrap;
+      }
+
+      .footer-branddesc {
+        font-size: 14px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.62);
+        margin: 0 0 20px;
+        max-width: 340px;
+        overflow-wrap: anywhere;
+      }
+
+      /* Email signup */
+      .footer-signup {
+        display: flex;
+        align-items: stretch;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+        max-width: 340px;
+        margin-bottom: 22px;
+        box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.4);
+      }
+      .footer-signup input {
+        flex: 1;
+        min-width: 0;
+        width: 100%;
+        border: 0;
+        outline: 0;
+        padding: 14px 14px;
+        font-size: 14px;
+        color: #1e2033;
+        background: transparent;
+      }
+      .footer-signup input::placeholder {
+        color: #8b95ab;
+        font-weight: 500;
+      }
+      .footer-signup button {
+        border: 0;
+        background: #6c4df6;
+        color: #fff;
+        font-size: 13.5px;
+        font-weight: 700;
+        padding: 14px 18px;
+        cursor: pointer;
+        transition: background-color 0.25s ease;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .footer-signup button:hover {
+        background: #5639d6;
+      }
+
+      /* Socials */
+      .footer-socials {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .footer-social {
+        width: 38px;
+        height: 38px;
+        border-radius: 999px;
+        background: #1a1c2e;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        transition:
+          background-color 0.25s ease,
+          transform 0.25s ease;
+        flex-shrink: 0;
+      }
+      .footer-social:hover {
+        background: #6c4df6;
+        transform: translateY(-3px);
+      }
+      .footer-social svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      /* --- Link columns --- */
+      .footer-colhead {
+        font-size: 17px;
+        font-weight: 800;
+        color: #fff;
+        margin: 0 0 18px;
+        letter-spacing: -0.01em;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .footer-links li {
+        min-width: 0;
+      }
+
+      .footer-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.62);
+        transition: color 0.25s ease;
+        max-width: 100%;
+        min-width: 0;
+      }
+      .footer-link svg {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+        color: #8b5cf6;
+        transition: transform 0.25s ease;
+      }
+      .footer-link span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+      .footer-link:hover {
+        color: #fff;
+      }
+      .footer-link:hover svg {
+        transform: translateX(4px);
+      }
+
+      /* --- Gallery --- */
+      .footer-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+        max-width: 340px;
+      }
+      .footer-gallery-item {
+        position: relative;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #1a1c2e;
+        cursor: pointer;
+        display: block;
+      }
+      .footer-gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.3, 1);
+      }
+      .footer-gallery-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(15, 17, 35, 0.2);
+        transition: opacity 0.35s ease;
+        pointer-events: none;
+      }
+      .footer-gallery-item:hover img {
+        transform: scale(1.12);
+      }
+      .footer-gallery-item:hover::after {
+        opacity: 0;
+      }
+
+      /* =========================================================
+     BOTTOM BAR
+  ========================================================= */
+      .footer-bottom {
+        position: relative;
+        z-index: 2;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 18px 0;
+        width: 100%;
+      }
+      .footer-bottom-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        text-align: center;
+        width: 100%;
+      }
+      @media (min-width: 768px) {
+        .footer-bottom-inner {
+          flex-direction: row;
+          text-align: left;
+          gap: 20px;
+        }
+      }
+
+      .footer-bottom-left,
+      .footer-bottom-right {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.62);
+        line-height: 1.4;
+        max-width: 100%;
+        min-width: 0;
+        text-align: center;
+        justify-content: center;
+      }
+      @media (min-width: 768px) {
+        .footer-bottom-left,
+        .footer-bottom-right {
+          text-align: left;
+        }
+      }
+
+      .footer-bottom-icon {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        color: #8b5cf6;
+      }
+      .footer-bottom-left strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      .footer-bottom-left span,
+      .footer-bottom-right span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      /* =========================================================
+     SCROLL TO TOP
+  ========================================================= */
+      .footer-scrolltop {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        width: 46px;
+        height: 46px;
+        border-radius: 999px;
+        border: 0;
+        background: rgba(108, 77, 246, 0.92);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        z-index: 900;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        box-shadow: 0 14px 30px -12px rgba(108, 77, 246, 0.85);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease,
+          transform 0.3s ease,
+          background-color 0.25s ease;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .footer-scrolltop.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .footer-scrolltop:hover {
+        background: #6c4df6;
+        transform: translateY(-3px);
+      }
+      .footer-scrolltop svg {
+        width: 18px;
+        height: 18px;
+      }
+      @media (min-width: 640px) {
+        .footer-scrolltop {
+          right: 26px;
+          bottom: 26px;
+          width: 48px;
+          height: 48px;
+        }
+      }
+
+      /* =========================================================
+     DEMO PAGE (delete when integrating)
+  ========================================================= */
+      .demo-hero {
+        min-height: 60vh;
+        background: linear-gradient(
+          135deg,
+          #0f1123 0%,
+          #1a1c2e 50%,
+          #442bb5 100%
+        );
+        display: grid;
+        place-items: center;
+        padding: 80px 20px;
+        color: #fff;
+        text-align: center;
+        overflow: hidden;
+      }
+      .demo-hero h1 {
+        font-size: clamp(26px, 6vw, 48px);
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        line-height: 1.1;
+        margin: 0;
+        overflow-wrap: anywhere;
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =========================================================
+     FOOTER
+========================================================== -->
+    <div class="footer-shell">
+      <div class="footer-waves" aria-hidden="true"></div>
+
+      <div class="footer-container">
+        <!-- ==================================================
+         TOP CTA BANNER
+    =================================================== -->
+        <section class="footer-cta">
+          <h2 class="footer-cta-title">
+            Find an Insurance Agent or Start<br />
+            Tracking your Claims
+          </h2>
+
+          <div class="footer-cta-right">
+            <a href="./404.html" class="footer-cta-btn">
+              <span>Track Your Claim</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+
+            <div class="footer-cta-help">
+              <span class="footer-cta-help-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                  <path
+                    d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+                  />
+                </svg>
+              </span>
+              <div class="footer-cta-help-text">
+                <p class="footer-cta-help-label">Need Help?</p>
+                <p class="footer-cta-help-number">+91(123)456 88</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================
+         MAIN FOOTER GRID
+    =================================================== -->
+        <section class="footer-main">
+          <div class="footer-grid">
+            <!-- ============ Column 1: Brand ============ -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="0">
+              <a href="./index.html" class="footer-brandlogo">
+                <span class="footer-brandlogo-icon">
+                  <img src="./assets/logo.webp" alt="STACKLY" />
+                </span>
+              </a>
+
+              <p class="footer-branddesc">
+                Sed ut perspiciatis unde omnis iste natus errors voluptatem
+                accusantium doloremque laudantium totam
+              </p>
+
+              <form class="footer-signup" action="./404.html">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  aria-label="Your email address"
+                  required
+                />
+                <button type="submit">Sign up</button>
+              </form>
+
+              <div class="footer-socials">
+                <a
+                  href="./404.html"
+                  class="footer-social"
+                  aria-label="Facebook"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.29-.04-1.27-.13-2.41-.13-2.38 0-4.02 1.45-4.02 4.12V9.9H7.5V13h2.77v8z"
+                    />
+                  </svg>
+                </a>
+                <a href="./404.html" class="footer-social" aria-label="Twitter">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1.6 2h6.4l4.4 5.9zm-1.1 18h1.7L7.3 3.7H5.5z"
+                    />
+                  </svg>
+                </a>
+                <a href="./404.html" class="footer-social" aria-label="Skype">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M19.6 14.2c0 3-2.4 5.4-5.4 5.4-1.6 0-3-.7-4-1.8-.4.1-.8.2-1.2.2-3.1 0-5.6-2.5-5.6-5.6 0-.5.1-1 .2-1.5C2.5 9.7 2 8.5 2 7.2 2 4.2 4.4 1.8 7.4 1.8c1.3 0 2.5.5 3.4 1.3.4-.1.8-.1 1.2-.1 3.1 0 5.6 2.5 5.6 5.6 0 .4-.1.8-.1 1.2.8.9 1.3 2.1 1.3 3.4zm-8 4.4c2.7 0 4.9-2.2 4.9-4.9 0-.9-.3-1.8-.8-2.5l-.5-.7.2-.8c.1-.4.2-.8.2-1.2 0-2.4-2-4.4-4.4-4.4-.4 0-.8.1-1.2.2l-.8.2-.7-.5c-.7-.5-1.6-.8-2.5-.8-2.2 0-4.1 1.8-4.1 4.1 0 .9.3 1.8.8 2.5l.5.7-.2.8c-.1.4-.2.8-.2 1.2 0 2.4 2 4.4 4.4 4.4.4 0 .8-.1 1.2-.2l.8-.2.7.5c.7.5 1.6.8 2.5.8z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="./404.html"
+                  class="footer-social"
+                  aria-label="Instagram"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle
+                      cx="17.5"
+                      cy="6.5"
+                      r="1.2"
+                      fill="currentColor"
+                      stroke="none"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- ============ Column 2: Services ============ -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="80">
+              <h4 class="footer-colhead">Services</h4>
+              <ul class="footer-links">
+                <li>
+                  <a href="./404.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>House Insurance</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./404.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Medical Insurance</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./404.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Car Insurance</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./404.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Business Insurance</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./404.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Travel Insurance</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./404.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Fire Insurance</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./404.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Marrige Insurance</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- ============ Column 3: Other Pages ============ -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="160">
+              <h4 class="footer-colhead">Other Pages</h4>
+              <ul class="footer-links">
+                <li>
+                  <a href="./index.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Home</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./service.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Services</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./blog.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Blog</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./about.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>About Us</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./contact.html" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>Contact Us</span></a
+                  >
+                </li>
+                <!-- <li>
+                  <a href="#" class="footer-link"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                    ><span>About Us</span></a
+                  >
+                </li> -->
+              </ul>
+            </div>
+
+            <!-- ============ Column 4: Photo Gallery ============ -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="240">
+              <h4 class="footer-colhead">Photo Gallery</h4>
+              <div class="footer-gallery">
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f1.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f2.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f3.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f4.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f5.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f6.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f7.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f8.webp" alt="" loading="lazy"
+                /></a>
+                <a href="./404.html" class="footer-gallery-item"
+                  ><img src="./assets/f9.webp" alt="" loading="lazy"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ==================================================
+       BOTTOM BAR
+  =================================================== -->
+      <div class="footer-bottom">
+        <div class="footer-container">
+          <div class="footer-bottom-inner">
+            <div class="footer-bottom-left">
+              <svg
+                class="footer-bottom-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 2l8 4v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4z" />
+              </svg>
+              <span
+                >Copyright 2025, <strong>STACKLY</strong>. All Rights
+                Reserved</span
+              >
+            </div>
+
+            <div class="footer-bottom-right">
+              <svg
+                class="footer-bottom-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+              <span>Working Hours : Sun-monday 09am–5pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================
+     SCROLL TO TOP
+========================================================== -->
+    <button
+      type="button"
+      class="footer-scrolltop"
+      id="footerScrollTop"
+      aria-label="Scroll to top"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+    <!-- =========================================================
+     SCRIPTS
+========================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      (function () {
+        "use strict";
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        /* AOS — safe init */
+        try {
+          if (window.AOS) {
+            AOS.init({
+              duration: 700,
+              easing: "ease-out-cubic",
+              once: true,
+              offset: 60,
+              disable: reduceMotion,
+            });
+          }
+        } catch (e) {
+          console.warn("AOS failed", e);
+        }
+
+        /* Safety: force anything still hidden to become visible after 2s */
+        setTimeout(function () {
+          document.querySelectorAll("[data-aos]").forEach(function (el) {
+            var cs = window.getComputedStyle(el);
+            if (parseFloat(cs.opacity) < 0.1) {
+              el.style.opacity = "1";
+              el.style.transform = "none";
+            }
+          });
+        }, 2000);
+
+        /* Scroll to top */
+        const scrollTopBtn = document.getElementById("footerScrollTop");
+        function handleScroll() {
+          if (!scrollTopBtn) return;
+          if (window.scrollY > 400) scrollTopBtn.classList.add("is-visible");
+          else scrollTopBtn.classList.remove("is-visible");
+        }
+        handleScroll();
+        window.addEventListener("scroll", handleScroll, { passive: true });
+
+        if (scrollTopBtn) {
+          scrollTopBtn.addEventListener("click", function () {
+            window.scrollTo({
+              top: 0,
+              behavior: reduceMotion ? "auto" : "smooth",
+            });
+          });
+        }
+
+        /* GSAP — gentle gallery reveal only.
+           The footer-cta animation was removed because it conflicted
+           with AOS and could leave the CTA invisible if GSAP failed. */
+        if (!reduceMotion && window.gsap && window.ScrollTrigger) {
+          try {
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.from(".footer-gallery-item", {
+              y: 16,
+              opacity: 0,
+              duration: 0.5,
+              ease: "power3.out",
+              stagger: 0.04,
+              scrollTrigger: {
+                trigger: ".footer-gallery",
+                start: "top 88%",
+                once: true,
+              },
+            });
+          } catch (e) {
+            console.warn("GSAP gallery reveal failed", e);
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
